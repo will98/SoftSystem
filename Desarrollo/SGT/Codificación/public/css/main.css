@@ -2,6 +2,14 @@ header, body, footer{
 	font-family: 'Lato', sans-serif;
 }
 
+footer{
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
 
 /*header*/
 .h-row{
@@ -43,6 +51,8 @@ header, body, footer{
 	text-decoration: none;
 	padding: 5px 0;
 }
+
+
 
 /*main*/
 

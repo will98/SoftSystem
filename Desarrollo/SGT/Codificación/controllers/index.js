@@ -1,3 +1,3 @@
 exports.test = (req, res, next) => {
-    res.render('test', {title: "Página de inicio"});
+    res.render('test', {title: "Página de inicio", layout: "main"});
 }

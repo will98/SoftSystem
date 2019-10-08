@@ -1,0 +1,48 @@
+header, body, footer{
+	font-family: 'Lato', sans-serif;
+}
+
+
+/*header*/
+.h-row{
+	background: #7D0005;
+	color: white;
+	padding: 15px 0;
+}
+.h-row a{
+	color: white;
+	text-decoration: none;
+}
+.h-logo, .h-name-logo{
+	padding: 0;
+	padding-top: 15px;
+}
+.h-name1-logo{
+	font-size: 50px;
+	font-weight: bold;
+	height: 60px;
+}
+.h-logo img{
+	max-height: 102px;
+}
+.h-name2-logo{
+	font-size: 20px;
+	height: 24px;
+}
+.h-escudo img{
+	max-height: 105px;
+	float: right;
+}
+
+/*footer*/
+.f-row{
+	border-top: solid 1px black;
+}
+.f-row a{
+	color: black;
+	text-decoration: none;
+	padding: 5px 0;
+}
+
+/*main*/
+

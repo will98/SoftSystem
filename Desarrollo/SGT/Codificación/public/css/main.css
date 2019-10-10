@@ -64,7 +64,8 @@ footer{
 .menu-izq-row div{
 	padding: 0;
 }
-.menu-izq-row button{
+
+.menu-izq-row a{
 	width: 100%;
 	text-align: left;
 	background: white;
@@ -90,6 +91,25 @@ footer{
 	.h-escudo{
 		margin: 0;
 	}
+}
 
-	
+.titulo{
+	color: #47525E;
+	font-size: 20px;
+	padding-bottom: 0px;
+}
+
+hr{
+	margin-top:0px
+}
+
+/*comunidad y coleccion*/
+.comunidad {
+	color: #00A6FF;
+	font-size: 32px
+}
+
+.comunidad img{
+	display:block;
+	margin:auto;
 }

@@ -56,3 +56,10 @@ footer{
 
 /*main*/
 
+.margin-top-title{
+    margin-top: 50px !important;
+}
+
+.background-btn{
+	background-color: #7D0005 !important
+}

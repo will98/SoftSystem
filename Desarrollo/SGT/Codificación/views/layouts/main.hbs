@@ -3,18 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/css/lib/animate.css">
   <link rel="stylesheet" type="text/css" href="/css/lib/hover.css">
   <link rel="stylesheet" type="text/css" href="/css/lib/bootstrap4.css">
   <link rel="stylesheet" href="/css/main.css">
 
+
   <script src="/js/lib/bootstrap4.js"></script>
 </head>
 <body>
   {{> header}}
+
   <div class="container">
-	  {{{body}}}
+    <div class="row">
+      <div class="menu-izq col-12 col-lg-3">
+        <div class="col-12 menu-izq-row">
+          <div class="col-12">
+            <button>Inicio</button>
+          </div>
+          <div class="col-12">
+            <button>Temas más visitados</button>
+          </div>
+          <div class="col-12">
+            <button>Comunidades y colección</button>
+          </div>
+          <div class="col-12">
+            <button>Rango de años</button>
+          </div>
+          <div class="col-12">
+            <button>Palabras clave</button>
+          </div>
+          <div class="col-12">
+            <button>Grado académico</button>
+          </div>
+          <div class="col-12">
+            <button>Facultades</button>
+          </div>
+          <div class="col-12">
+            <button>Asesores</button>
+          </div>
+          
+        </div>
+        
+      </div>
+      <div class="main-der col-12 col-lg-9">
+          {{{body}}}
+      </div>
+    </div>
+    
   </div>
+
   {{> footer}}
 </body>
 </html>

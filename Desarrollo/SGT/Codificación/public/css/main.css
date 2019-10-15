@@ -7,7 +7,6 @@ header, body, footer{
 .h-row{
 	background: #7D0005;
 	color: white;
-	padding: 15px 0;
 	padding: 0;
 	text-align: center;
 }
@@ -15,36 +14,43 @@ header, body, footer{
 	color: white;
 	text-decoration: none;
 }
-.h-logo, .h-name-logo{
-	padding: 0;
-	padding-top: 15px;
-}
 
 .h-name1-logo{
 	font-size: 50px;
 	font-weight: bold;
+	height: 60px;
+}
+.h-logo img{
+	max-height: 102px;
+}
+.h-name2-logo{
+	font-size: 20px;
+	height: 24px;
 }
 .h-escudo img{
 	max-height: 105px;
-	float: right;
 }
 .h-escudo{
 	margin: 15px 0;
 }
 
 /*footer*/
-footer{
+/*footer{
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-}
+}*/
 .f-row{
 	border-top: solid 1px black;
 }
-
+.f-row a{
+	color: black;
+	text-decoration: none;
+	padding: 5px 0;
+}
 
 /*menu izquierda*/
 .menu-izq{
@@ -67,6 +73,23 @@ footer{
 	color: #8190A5;
 	padding: 5px 15px;
 }
+.search{
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+.search-titulo{
+	font-size: 26px;
+	height: 32px;
+	font-weight: bold;
+	color: #47525E;
+	margin-bottom: 15px;
+}
+.search .btn-outline-secondary:hover {
+    color: #000000;
+    background-color: #B90413;
+    border-color: #B90413;
+}
+
 
 @media (min-width: 992px){
 	.h-row{
@@ -84,3 +107,6 @@ footer{
 	.h-escudo{
 		margin: 0;
 	}
+
+	
+}

@@ -2,29 +2,19 @@ header, body, footer{
 	font-family: 'Lato', sans-serif;
 }
 
-footer{
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-}
 
 /*header*/
 .h-row{
 	background: #7D0005;
 	color: white;
-	padding: 15px 0;
+	padding: 0;
+	text-align: center;
 }
 .h-row a{
 	color: white;
 	text-decoration: none;
 }
-.h-logo, .h-name-logo{
-	padding: 0;
-	padding-top: 15px;
-}
+
 .h-name1-logo{
 	font-size: 50px;
 	font-weight: bold;
@@ -39,10 +29,20 @@ footer{
 }
 .h-escudo img{
 	max-height: 105px;
-	float: right;
+}
+.h-escudo{
+	margin: 15px 0;
 }
 
 /*footer*/
+footer{
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
 .f-row{
 	border-top: solid 1px black;
 }
@@ -52,10 +52,48 @@ footer{
 	padding: 5px 0;
 }
 
+/*menu izquierda*/
+.menu-izq{
+	background: #F3F3F3;
+	padding: 30px 15px;
+}
+.menu-izq-row{
+	border: solid 1px #ADB6C2;
+	padding: 0;
+}
+.menu-izq-row div{
+	padding: 0;
+}
 
+.menu-izq-row a{
+	width: 100%;
+	text-align: left;
+	background: white;
+	border: none;
+	border-bottom: solid 1px #CAC8D1;
+	color: #8190A5;
+	padding: 5px 15px;
+}
 
-/*main*/
+@media (min-width: 992px){
+	.h-row{
+		text-align: center;
+		padding: 15px 0;
+	}
+	.h-escudo img{
+		float: right;
+	}
+	.h-logo, .h-name-logo{
+		padding: 0;
+		padding-top: 15px;
+		text-align: left;
+	}
+	.h-escudo{
+		margin: 0;
+	}
+}
 
+<<<<<<< HEAD
 .margin-top-title{
     margin-top: 50px !important;
 }
@@ -63,3 +101,25 @@ footer{
 .background-btn{
 	background-color: #7D0005 !important
 }
+=======
+.titulo{
+	color: #47525E;
+	font-size: 20px;
+	padding-bottom: 0px;
+}
+
+hr{
+	margin-top:0px
+}
+
+/*comunidad y coleccion*/
+.comunidad {
+	color: #00A6FF;
+	font-size: 32px
+}
+
+.comunidad img{
+	display:block;
+	margin:auto;
+}
+>>>>>>> master

@@ -2,6 +2,7 @@ header, body, footer{
 	font-family: 'Lato', sans-serif;
 }
 
+/*************** partials  ******************/
 
 /*header*/
 .h-row{
@@ -89,7 +90,58 @@ header, body, footer{
     background-color: #B90413;
     border-color: #B90413;
 }
+.search-avanzada{
+	margin-top: 5px;
+	margin-bottom: 15px;
+	padding: 0;
+}
 
+
+/*************** Fin de partials  ******************/
+
+/* home */
+.home, .home-inicio, .home-ultimas-tesis, .home-lista-tesis{
+	padding: 0;
+}
+.home-inicio{
+	border-bottom: solid 1px #828086;
+	font-weight: bold;
+	color: #47525E;
+	/*height: 27px;*/
+	font-size: 22px;
+	/*padding-bottom: 5px !important;*/
+}
+.home-ultimas-tesis{
+	color: #47525E;
+	font-size: 26px;
+	font-weight: bold;
+	margin-top: 15px;
+}
+.home-tesis{
+	border: solid #8492A6 1px;
+	padding: 5px 0;
+	background: #FFF9E0;
+}
+.home-tesis-cabecera{
+	border-bottom: solid #8492A6 1px;
+	color: #47525E;
+}
+.home-tesis-cuerpo{
+	padding: 0;
+}
+.home-titulo{
+	margin: 5px 0;
+	color: #477DB9;
+	font-weight: bold;
+}
+.home-autor{
+	color: #828992;
+}
+.home-visitas{
+	margin: 5px 0;
+	color: #000000;
+	font-weight: bold;
+}
 
 @media (min-width: 992px){
 	.h-row{

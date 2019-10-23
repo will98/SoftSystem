@@ -7,10 +7,10 @@ exports.test = (req, res, next) => {
 exports.home = (req, res, next) => {
     res.render('home/home', {title: "Home", layout: "main"});
 }
+
 exports.buscar = (req, res, next) => {
     res.render('home/buscar', {title: "Home", layout: "main"});
 }
-
 
 exports.asesor = (req, res, next) => {
     res.render('Buscador/asesor/asesor', {title: "Asesor", layout: "main"});
@@ -27,3 +27,4 @@ exports.grado_academico = (req, res, next) => {
 exports.palabra_clave = (req, res, next) => {
     res.render('Buscador/palabra_clave/palabra_clave', {title: "Palabra clave", layout: "main"});
 }
+

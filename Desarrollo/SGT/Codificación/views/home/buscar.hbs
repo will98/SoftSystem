@@ -69,4 +69,39 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="paginacion col-12">
+
+		<div class="paginado row justify-content-end">
+			<form class="pag" method="post">
+		      <a class="prev align-middle" href="/search/page/1?query=maching+learning" title="previous">
+		        <i class="fas fa-caret-square-left"></i>
+		      </a>
+		      <span class="page-nr align-middle">
+		        Página
+		        <span class="field">
+		          <input class="page-number" type="text" name="go-to-page" title="Page 2" value="2"/>
+		          <span class="pagination-error error-message d-none">
+		            <strong>
+		              <span class="invalid-page-number"></span>
+		            </strong>
+		            is not a valid page number. Please enter a number between
+		            <strong>1</strong>
+		            and
+		            <strong>1,229</strong>
+		          </span>
+		        </span>
+		        de
+		        <span class="number-of-pages">50</span>
+		      </span>
+		      <input class="previous-page" type="hidden" name="previous-page" value="2"/>
+		      <input class="d-none" type="hidden" name="total-pages" value="1,229"/>
+		      <input class="d-none" type="hidden" name="searchParameters" value="query=maching+learning"/>
+		      <input class="d-none" type="submit" name="submit" value="submit"/>
+		      <a class="next align-middle" href="/search/page/3?query=maching+learning" title="next">
+		        <i class="fas fa-caret-square-right"></i>
+		      </a>
+		    </form>
+		</div>
+	</div>
 </div>

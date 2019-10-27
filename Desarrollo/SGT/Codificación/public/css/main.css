@@ -162,6 +162,32 @@ header, body, footer{
 	float: right;
 }
 
+/* buscar */
+.paginacion{
+	background: #F3F3F3;
+	padding: 10px 15px;
+}
+.paginacion .fas{
+	font-size: 32px;
+}
+.paginado{
+	padding: 0 15px;
+}
+.paginado .page-number{
+	width: 60px;
+	border-radius: 5px;
+	height: 30px;
+	text-align: center;
+}
+
+.paginado .prev {
+    margin-right: 10px;
+}
+.paginado .next {
+    margin-left: 10px;
+}
+
+
 @media (min-width: 992px){
 	.h-row{
 		text-align: center;

@@ -10,5 +10,6 @@ Router.get("/grado_academico", controller.grado_academico)
 Router.get("/palabra_clave", controller.palabra_clave)
 Router.get("/home", controller.home)
 Router.get("/buscar", controller.buscar)
+Router.get("/busqueda_avanzada", controller.busqueda_avanzada)
 
 module.exports = Router

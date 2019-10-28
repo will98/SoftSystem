@@ -186,6 +186,124 @@ header, body, footer{
 .paginado .next {
     margin-left: 10px;
 }
+.paginado form a i{
+	color: #969FAA;
+	background: black;
+	display: inline-block;
+	line-height: 0;
+}
+.paginado form a{
+	display: inline-grid;
+	text-decoration: none;
+}
+
+/*busqueda*/
+.busqueda-avanzada{
+	font-weight: bold;
+	color: #47525E;
+	/*height: 27px;*/
+	font-size: 22px;
+	padding: 0;
+	/*padding-bottom: 5px !important;*/
+	margin-bottom: 15px;
+}
+.busqueda-campos{
+	padding: 0 30px;
+}
+.busqueda-campos-borde{
+	border: 1px solid #8492A6;
+  	border-radius: 20px;
+  	padding: 15px 30px;
+}
+
+.busqueda-campos-borde .row{
+	margin-bottom: 15px;
+}
+.avanzado-label {
+	margin-bottom: 5px;
+	font-weight: 700;
+	color: #47525E;
+}
+.avanzado-input input, .avanzado-input select{
+	background-color: #FFFFFF;
+  	border: 1px solid #8492A6;
+  	border-radius: 5px;
+  	width: 100%;
+  	height: 36px;
+  	font-size: 15px;
+  	padding: 0 15px;
+}
+.busqueda-campos-borde .row-2col{
+	padding: 0;
+}
+
+/****** range *************/
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background: #E5E9F2;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: solid 1px #8492A6;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: solid 1px #8492A6;
+  cursor: pointer;
+}
+
+
+/*****/
+.inputDiv {
+  margin-top: 15px;
+  position: relative;
+}
+
+.etiqueta {
+  width: 30px;
+  height: 26px;
+  position: absolute;
+  z-index: 9;
+  /*background-color: HotPink;*/
+  color: #47525E;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 7px;
+  top: -25px;
+}
+
+/******* fin de range **********/
+
+.avanzado-buscar{
+	margin-top: 30px;
+}
+.avanzado-buscar button{
+	background: #47525E;
+	color: #FFFFFF;
+	padding: 5px 45px;
+}
 
 
 @media (min-width: 992px){

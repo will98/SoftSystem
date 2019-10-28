@@ -320,18 +320,21 @@ header, body, footer{
 	padding: 5px 45px;
 	float: right;
 }
-
-
-/* mas visitadas */
-.masvisitadas-label{
-	margin-top: 30px;	
+.avanzado-paddingtop{
+	padding-top: 28px;
+	padding-left: 0;
+	padding-right: 15px;
+}
+.avanzado-label-anio{
+	text-align: center;
 }
 
-/* mas visitadas - busqueda */
-.masvisitadas-busqueda{
+/* rango de años */ 
+.masvisitadas-borde{
+	padding-bottom: 40px;
+	margin-bottom: 30px;
 	margin-top: 30px;
-	border-top: solid 1px #828086;
-	padding-top: 30px;
+	border-bottom: solid 1px #828086;
 }
 
 @media (min-width: 992px){

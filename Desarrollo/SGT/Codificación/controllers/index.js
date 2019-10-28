@@ -14,7 +14,12 @@ exports.buscar = (req, res, next) => {
 exports.busqueda_avanzada = (req, res, next) => {
     res.render('home/busqueda_avanzada', {title: "Búsqueda Avanzada", layout: "main3"});
 }
-
+exports.mas_visitadas = (req, res, next) => {
+    res.render('home/mas_visitadas', {title: "Tesis más visitadas", layout: "main"});
+}
+exports.mas_visitadas_busqueda = (req, res, next) => {
+    res.render('home/mas_visitadas_busqueda', {title: "Tesis más visitadas", layout: "main"});
+}
 exports.asesor = (req, res, next) => {
     res.render('Buscador/asesor/asesor', {title: "Asesor", layout: "main"});
 }

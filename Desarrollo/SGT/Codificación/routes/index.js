@@ -11,5 +11,7 @@ Router.get("/palabra_clave", controller.palabra_clave)
 Router.get("/home", controller.home)
 Router.get("/buscar", controller.buscar)
 Router.get("/busqueda_avanzada", controller.busqueda_avanzada)
+Router.get("/mas_visitadas", controller.mas_visitadas)
+Router.get("/mas_visitadas_busqueda", controller.mas_visitadas_busqueda)
 
 module.exports = Router

@@ -277,7 +277,7 @@ header, body, footer{
 
 /*****/
 .inputDiv {
-  margin-top: 15px;
+  /*margin-top: 15px;*/
   position: relative;
 }
 
@@ -291,7 +291,17 @@ header, body, footer{
   font-size: 12px;
   text-align: center;
   padding-top: 7px;
-  top: -25px;
+  top: -3px;
+}
+.ini-slider-start{
+	color: #47525E;
+  	font-size: 12px;
+}
+.ini-slider-end{
+	float: right;
+	color: #47525E;
+  	font-size: 12px;
+  	padding-top: 4px;
 }
 
 /******* fin de range **********/
@@ -304,7 +314,25 @@ header, body, footer{
 	color: #FFFFFF;
 	padding: 5px 45px;
 }
+.masvisitadas-buscar button{
+	background: #47525E;
+	color: white;
+	padding: 5px 45px;
+	float: right;
+}
 
+
+/* mas visitadas */
+.masvisitadas-label{
+	margin-top: 30px;	
+}
+
+/* mas visitadas - busqueda */
+.masvisitadas-busqueda{
+	margin-top: 30px;
+	border-top: solid 1px #828086;
+	padding-top: 30px;
+}
 
 @media (min-width: 992px){
 	.h-row{

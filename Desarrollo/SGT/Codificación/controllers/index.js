@@ -9,7 +9,10 @@ exports.home = (req, res, next) => {
 }
 
 exports.buscar = (req, res, next) => {
-    res.render('home/buscar', {title: "Home", layout: "main"});
+    res.render('home/buscar', {title: "Buscar", layout: "main"});
+}
+exports.busqueda_avanzada = (req, res, next) => {
+    res.render('home/busqueda_avanzada', {title: "Búsqueda Avanzada", layout: "main3"});
 }
 
 exports.asesor = (req, res, next) => {

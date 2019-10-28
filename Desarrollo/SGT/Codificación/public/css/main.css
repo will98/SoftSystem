@@ -337,6 +337,38 @@ header, body, footer{
 	border-bottom: solid 1px #828086;
 }
 
+/* comunidades*/
+.comunidades-lista{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.comunidades-comunidad {
+	margin-bottom: 5px;
+}
+.comunidades-comunidad img{
+	height: 64px;
+	margin-right: 10px;
+}
+.comunidades-comunidad span{
+	font-size: 26px;
+	color: #00A6FF;
+	font-weight: 700;
+	padding-bottom: 3px;
+}
+.comunidades-comunidad button{
+	background: transparent;
+	border: none;
+	padding: 0;
+}
+.comunidades-comunidad button:focus{
+	outline: none;
+}
+.comunidades-comunidad span:hover{
+	color: #BDAA7E;
+	transition: all 0.3s;
+}
+
+
 @media (min-width: 992px){
 	.h-row{
 		text-align: center;

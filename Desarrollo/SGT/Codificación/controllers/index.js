@@ -20,6 +20,12 @@ exports.mas_visitadas = (req, res, next) => {
 exports.rango_anios = (req, res, next) => {
     res.render('home/rango_anios', {title: "Búsqueda por rango de años", layout: "main"});
 }
+exports.comunidades = (req, res, next) => {
+    res.render('home/comunidades', {title: "Búsqueda por rango de años", layout: "main"});
+}
+exports.comunidad = (req, res, next) => {
+    res.render('home/comunidad', {title: "Búsqueda por rango de años", layout: "main"});
+}
 exports.asesor = (req, res, next) => {
     res.render('Buscador/asesor/asesor', {title: "Asesor", layout: "main"});
 }

@@ -218,3 +218,8 @@ hr{
 	display:block;
 	margin:auto;
 }
+
+.style-header{
+	background: yellow !important;
+	color: #000000;
+}

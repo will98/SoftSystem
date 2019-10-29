@@ -1,8 +1,17 @@
 const Router = require('express').Router()
 const controller = require('../controllers')
+const home = require('../routes/home')
+const acceso = require('../routes/acceso')
+const admin = require('../routes/admin')
+const buscador = require('../routes/buscador')
+const tesis = require('../routes/tesis')
 
+Router.get("/", home)
+Router.use("/acceso", acceso)
+Router.use("/admin", admin)
+Router.use("/buscador", buscador)
+Router.use("/tesis", tesis)
 
-Router.get("/", controller.test)
 Router.get("/asesor", controller.asesor)
 Router.get("/comunidad_coleccion", controller.comunidad_coleccion)
 Router.get("/facultad", controller.facultad)

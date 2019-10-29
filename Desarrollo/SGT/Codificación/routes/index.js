@@ -6,7 +6,6 @@ const admin = require('../routes/admin')
 const buscador = require('../routes/buscador')
 const tesis = require('../routes/tesis')
 
-Router.get("/", home)
 Router.use("/acceso", acceso)
 Router.use("/admin", admin)
 Router.use("/buscador", buscador)
@@ -20,5 +19,9 @@ Router.get("/palabra_clave", controller.palabra_clave)
 Router.get("/home", controller.home)
 Router.get("/buscar", controller.buscar)
 Router.get("/busqueda_avanzada", controller.busqueda_avanzada)
+Router.get("/mas_visitadas", controller.mas_visitadas)
+Router.get("/rango_anios", controller.rango_anios)
+Router.get("/comunidades", controller.comunidades)
+Router.get("/comunidad", controller.comunidad)
 
 module.exports = Router

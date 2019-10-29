@@ -1,11 +1,29 @@
 <div class="home col-12">
 	<div class="home-inicio col-12">
-		Inicio
+		Tesis más visitadas
 	</div>
-	<div class="home-ultimas-tesis col-12">
-		Últimas tesis y artículos publicados 
+	<div class="masvisitadas-borde">
+		<form action="">
+			<div class="row">
+				<div class="avanzado-label col-12">
+					Rango de visitas
+				</div>
+			
+				<div class="slidecontainer col-12 col-lg-6">
+					<div class="inputDiv">
+						<div class="etiqueta"></div>
+						<span class="ini-slider-start">1</span><span class="ini-slider-end">100</span>
+						<input class="slider" type="range" value="35" min="0" max="100" autocomplete="off" id="input3">
+					</div>
+				</div>
+				<div class="masvisitadas-buscar col-12 col-lg-6">
+					<button>Buscar</button>
+				</div>	
+			</div>
+		</form>
 	</div>
-	<div class="home-lista-tesis col-12">
+
+	<div class="home-lista-tesis masvisitadas-busqueda col-12">
 		<div class="home-tesis col-12">
 			<div class="home-tesis-cabecera1 col-12">
 				<i class="fas fa-unlock"></i>&nbsp;
@@ -105,3 +123,31 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+	var elInput3 = document.querySelector('#input3');
+	if (elInput3) {
+	  var w = parseInt(window.getComputedStyle(elInput3, null).getPropertyValue('width'));
+
+	  // LA ETIQUETA 
+	  var etq = document.querySelector('.etiqueta');
+	  if (etq) {
+	    // el valor de la etiqueta (el tooltip) 
+	    etq.innerHTML = elInput3.value;
+
+	    // calcula la posición inicial de la etiqueta (el tooltip); 
+	    var pxls = w / 100;
+
+	    etq.style.left = ((elInput3.value * pxls) - 15) + 'px';
+
+	    elInput3.addEventListener('input', function() {
+	      // cambia el valor de la etiqueta (el tooltip) 
+	      etq.innerHTML = elInput3.value;
+	      // cambia la posición de la etiqueta (el tooltip) 
+	      etq.style.left = ((elInput3.value * pxls) - 15) + 'px';
+
+	    }, false);
+	  }
+	}
+</script>

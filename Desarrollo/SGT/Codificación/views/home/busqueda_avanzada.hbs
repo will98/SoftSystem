@@ -35,27 +35,27 @@
 				<div class="avanzado-label col-12">
 					Mostrar documentos publicados
 				</div>
-				<div class="col-12 col-lg-4">
-					<div class="avanzado-input col-12">
+				<div class="avanzado-select avanzado-paddingtop col-12 col-lg-4">
+					<div class="avanzado-input avanzado-input-anio col-12">
 						<select>
 							<option value="">Año</option>
 							<option value="">Rango de Años</option>
 						</select>
 					</div>
 				</div>
-				<div class="col-12 col-lg-4">
-					<div class="avanzado-label col-12">
+				<div class="avanzado-select col-12 col-lg-4">
+					<div class="avanzado-label avanzado-label-anio col-12">
 						Año de Inicio
 					</div>
-					<div class="avanzado-input col-12">
+					<div class="avanzado-input avanzado-input-anio col-12">
 						<input type="" name="">
 					</div>
 				</div>
-				<div class="col-12 col-lg-4">
-					<div class="avanzado-label col-12">
+				<div class="avanzado-select col-12 col-lg-4">
+					<div class="avanzado-label avanzado-label-anio col-12">
 						Año final
 					</div>
-					<div class="avanzado-input col-12">
+					<div class="avanzado-input avanzado-input-anio col-12">
 						<input type="" name="">
 					</div>
 				</div>
@@ -90,7 +90,7 @@
 			</div>
 
 			<div class="row">
-				<div class="row-2col col-12 col-lg-6">
+				<div class=" avanzado-select row-2col col-12 col-lg-6">
 					<div class="avanzado-label col-12">
 						Facultad
 					</div>
@@ -103,7 +103,7 @@
 						</select>
 					</div>
 				</div>
-				<div class="row-2col col-12 col-lg-6">
+				<div class=" avanzado-select row-2col col-12 col-lg-6">
 					<div class="avanzado-label col-12">
 					Escuela Académica
 				</div>
@@ -137,10 +137,10 @@
 					Autor
 				</div>
 				<div class="slidecontainer col-12 col-lg-6">
-					{{!-- <input type="range" min="1" max="1000" value="0" class="slider" id="myRange">
-					<p>Value: <span id="demo"></span></p> --}}
 					<div class="inputDiv">
-						<div class="etiqueta"></div>
+						<div class="etiqueta">
+						</div>
+						<span class="ini-slider-start">1</span><span class="ini-slider-end">100</span>
 						<input class="slider" type="range" value="35" min="0" max="100" autocomplete="off" id="input3">
 					</div>
 				</div>
@@ -156,13 +156,6 @@
 </div>
 
 <script>
-	// var slider = document.getElementById("myRange");
-	// var output = document.getElementById("demo");
-	// output.innerHTML = slider.value;
-
-	// slider.oninput = function() {
-	//   output.innerHTML = this.value;
-	// };
 
 	var elInput3 = document.querySelector('#input3');
 	if (elInput3) {

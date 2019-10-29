@@ -2,15 +2,15 @@
  * Module dependencies.
  */
 const express = require('express');
-// const session = require('express-session');
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-// const flash = require('express-flash');
+const flash = require('express-flash');
 const path = require('path');
 const moment = require('moment');
-// const passport = require('passport');
+const passport = require('passport');
 const hbs = require('express-handlebars');
-// const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo')(session);
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
  */
@@ -31,9 +31,9 @@ app.locals.moment = moment;
  * Handle Error
  */
 
-// const handleError = require('./middlewares/error').handleError;
+const {handleError} = require('../middlewares/handleError');
 
-// require('./middlewares/passport');
+require('../config/passport');
 
 /**
  * Express configuration.
@@ -49,37 +49,35 @@ app.engine( 'hbs', hbs( {
     extname: '.hbs',
 }));
 
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(session({
-//   resave: true,
-//   saveUninitialized: true,
-//   secret: process.env.SESSION_SECRET,
-//   store: new MongoStore({
-// 		url: process.env.MONGODB_URI || process.env.MLAB_URI,
-// 		autoReconnect: true
-// 	})
-// }));
-// app.use(flash());
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: process.env.SESSION_SECRET,
+  store: new MongoStore({
+		url: process.env.MONGO_URI,
+		autoReconnect: true
+	})
+}));
+app.use(flash());
 
 app.use(express.static(path.join(__dirname, '../public'), { maxAge: 31557600000 }));
 
 
-// app.use((req, res, next) => {
-//   req.dirname = __dirname;
-//   if(req.session){
-//     if(req.session.passport && req.session.passport.user) {
-//       res.locals.user = req.session.passport.user.user;
-//       req.user = req.session.passport.user.user;
-//     }
-//   }
+app.use((req, res, next) => {
+  req.dirname = __dirname;
+  if(req.session){
+    if(req.session.passport && req.session.passport.user) {
+      res.locals.user = req.session.passport.user;
+      req.user = req.session.passport.user;
+    }
+  }
   
-//   return next();
-// });
-
-//app.use(mdlw.getUser);
+  return next();
+});
 
 /**
  * Routes.
@@ -87,6 +85,6 @@ app.use(express.static(path.join(__dirname, '../public'), { maxAge: 31557600000 
 
 app.use(routes);
 
-// app.use(handleError);
+app.use(handleError);
 
 module.exports = app;

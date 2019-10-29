@@ -44,7 +44,7 @@ const genSalt = (round) => {
   })
   
   Usuario.methods.comparePassword = function (candidatePassword) {
-    const pssw = this.password;
+    const pssw = this.contrasena;
     return new Promise((resolve, reject) => {
       bcrypt.compare(candidatePassword, pssw, (err, isMatch) => {
         if(err) return reject(err);

@@ -22,10 +22,10 @@ exports.crear = (req, res) => {
     // Guardar un documento en la base de datos
     documento.save()
     .then(data => {
-        res.send(data);
+        res.send(data);//Se envia el documento para mostrar
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occurred while creating the Note."
+            message: err.message || "Error ocurrido mientras se guardaba el documento."
         });
     });
 };

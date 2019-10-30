@@ -16,23 +16,30 @@ header, body, footer{
 	text-decoration: none;
 }
 
-.h-name1-logo{
-	font-size: 50px;
-	font-weight: bold;
-	height: 60px;
+
+.h-name1-logo {
+    font-size: 32px;
+    font-weight: bold;
+    height: 40px;
 }
+
+
 .h-logo img{
 	max-height: 102px;
 }
-.h-name2-logo{
-	font-size: 20px;
-	height: 24px;
+
+.h-name2-logo {
+    font-size: 18px;
+    height: 24px;
 }
 .h-escudo img{
 	max-height: 105px;
 }
 .h-escudo{
 	margin: 15px 0;
+}
+.h-name-logo{
+	margin-bottom: 15px;
 }
 
 /*footer*/
@@ -46,6 +53,7 @@ header, body, footer{
 }*/
 .f-row{
 	border-top: solid 1px black;
+	text-align: center;
 }
 .f-row a{
 	color: black;
@@ -80,7 +88,6 @@ header, body, footer{
 }
 .search-titulo{
 	font-size: 26px;
-	height: 32px;
 	font-weight: bold;
 	color: #47525E;
 	margin-bottom: 15px;
@@ -119,12 +126,12 @@ header, body, footer{
 	font-size: 26px;
 	font-weight: bold;
 	margin-top: 25px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 .home-tesis{
 	border: solid #8492A6 1px;
 	padding: 0;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 }
 
 .home-tesis-cabecera1{
@@ -171,7 +178,8 @@ header, body, footer{
 	font-size: 32px;
 }
 .paginado{
-	padding: 0 15px;
+	padding: 0;
+	justify-content: center;
 }
 .paginado .page-number{
 	width: 60px;
@@ -208,16 +216,16 @@ header, body, footer{
 	margin-bottom: 15px;
 }
 .busqueda-campos{
-	padding: 0 30px;
+	padding: 0;
 }
 .busqueda-campos-borde{
 	border: 1px solid #8492A6;
   	border-radius: 20px;
-  	padding: 15px 30px;
+  	padding: 15px 15px;
 }
 
 .busqueda-campos-borde .row{
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 }
 .avanzado-label {
 	margin-bottom: 5px;
@@ -277,8 +285,8 @@ header, body, footer{
 
 /*****/
 .inputDiv {
-  margin-top: 15px;
   position: relative;
+  margin-bottom: 30px;
 }
 
 .etiqueta {
@@ -291,7 +299,17 @@ header, body, footer{
   font-size: 12px;
   text-align: center;
   padding-top: 7px;
-  top: -25px;
+  top: -3px;
+}
+.ini-slider-start{
+	color: #47525E;
+  	font-size: 12px;
+}
+.ini-slider-end{
+	float: right;
+	color: #47525E;
+  	font-size: 12px;
+  	padding-top: 4px;
 }
 
 /******* fin de range **********/
@@ -304,25 +322,70 @@ header, body, footer{
 	color: #FFFFFF;
 	padding: 5px 45px;
 }
+.masvisitadas-buscar {
+	text-align: center;
+}
+.masvisitadas-buscar button{
+	background: #47525E;
+	color: white;
+	padding: 5px 45px;
+}
+.avanzado-paddingtop{
+	padding-top: 28px;
+}
+.rangoanios-paddingtop{
+	padding-top: 5px;
+}
+.avanzado-label-anio{
+	text-align: center;
+}
+.avanzado-select{
+	margin-bottom: 15px;
+}
 
+.avanzado-input-anio{
+	padding: 0;
+}
 
-@media (min-width: 992px){
-	.h-row{
-		text-align: center;
-		padding: 15px 0;
-	}
-	.h-escudo img{
-		float: right;
-	}
-	.h-logo, .h-name-logo{
-		padding: 0;
-		padding-top: 15px;
-		text-align: left;
-	}
-	.h-escudo{
-		margin: 0;
-	}
+/* rango de años */ 
+.masvisitadas-borde{
+	padding-bottom: 40px;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	border-bottom: solid 1px #828086;
+}
 
+/* comunidades*/
+.comunidades-lista{
+	padding: 30px 0;
+}
+.comunidades-comunidad {
+	margin-bottom: 5px;
+}
+.comunidades-comunidad img{
+	height: 64px;
+}
+.comunidades-comunidad span{
+	font-size: 26px;
+	color: #00A6FF;
+	font-weight: 700;
+	padding-bottom: 3px;
+}
+.comunidades-comunidad button{
+	background: transparent;
+	border: none;
+	padding: 0;
+}
+.comunidades-comunidad button:focus{
+	outline: none;
+}
+.comunidades-comunidad span:hover{
+	color: #BDAA7E;
+	transition: all 0.3s;
+}
+/* comunidad */
+.comunidad-titulo{
+	margin-bottom: 30px;
 }
 
 .menu-izq-row a{
@@ -363,7 +426,99 @@ hr{
 	margin:auto;
 }
 
-.style-header{
-	background: yellow !important;
-	color: #000000;
+.position-search{
+	margin-top:24px !important;
+}
+
+.tam-img{
+	margin:20px !important;
+}
+
+@media (max-width: 767px){
+	.comunidades-comunidad span{
+		width: 100%;
+	}
+	.comunidades-comunidad button{
+		width: 100%;
+		margin: 0;
+	}
+	.h-row{
+		padding: 7px 0;
+	}
+}
+
+@media (min-width: 768px){
+	.f-row{
+		text-align: left;
+	}
+	.busqueda-campos{
+		padding: 0 30px;
+	}
+	.busqueda-campos-borde{
+	  	padding: 15px 30px;
+	}
+	.paginado{
+		padding: 0 15px;
+	}
+	.comunidades-comunidad img{
+		margin-right: 10px !important;
+	}
+	.comunidades-lista{
+		padding: 30px 15px;
+	}
+
+}
+
+@media (min-width: 992px){
+
+	.h-name-logo{
+		margin-bottom: 0;
+	}
+	.h-name1-logo{
+		font-size: 50px;
+		font-weight: bold;
+		height: 60px;
+	}
+	.h-name2-logo{
+		font-size: 20px;
+		height: 24px;
+	}
+	.h-row{
+		text-align: center;
+		padding: 15px 0;
+	}
+	.h-escudo img{
+		float: right;
+	}
+	.h-logo, .h-name-logo{
+		padding: 0;
+		padding-top: 15px;
+		text-align: left;
+	}
+	.h-escudo{
+		margin: 0;
+	}
+
+	.search-titulo{
+		height: 32px;
+	}
+	.avanzado-select{
+		margin-bottom: 0;
+	}
+	.paginado{
+		justify-content: flex-end;
+	}
+	.inputDiv {
+	  margin-bottom: 0;
+	}
+	.masvisitadas-buscar {
+		text-align: right;
+	}
+	.rangoanios-paddingtop{
+		padding-top: 28px;
+	}
+	.busqueda-campos-borde .row{
+		margin-bottom: 15px;
+	}
+
 }

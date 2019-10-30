@@ -25,5 +25,6 @@ Router.get("/mas_visitadas", controller.mas_visitadas)
 Router.get("/rango_anios", controller.rango_anios)
 Router.get("/comunidades", controller.comunidades)
 Router.get("/comunidad", controller.comunidad)
+Router.get("/login",controller.login) 
 
 module.exports = Router

@@ -362,3 +362,23 @@ hr{
 	display:block;
 	margin:auto;
 }
+
+/*estilo loging*/
+
+.container-login{
+	margin-right: 0px;
+	background-color: rgb(202, 206, 214);
+}
+
+.row-login{
+	background-color: white;
+    padding-left: 150px;
+    padding-right: 150px;
+    width: 600px;
+    margin-right: 200px;
+	margin-left: 400px;
+	margin-top:20px;
+	margin: auto;
+	height : 526px;
+	margin-bottom: 50px
+}

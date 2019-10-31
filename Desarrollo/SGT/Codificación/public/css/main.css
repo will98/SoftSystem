@@ -540,3 +540,16 @@ hr{
 	height : 526px;
 	margin-bottom : 50px;
 }
+
+.tam-card{
+	margin-left: 350px;
+	margin-right: 350px;
+}
+
+@media (max-width: 815px){
+	.tam-card-responsive{
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+
+}

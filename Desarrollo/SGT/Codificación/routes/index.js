@@ -8,6 +8,7 @@ const tesis = require('../routes/tesis')
 
 Router.get("/", controller.home)
 
+Router.use("/home", home)
 Router.use("/acceso", acceso)
 Router.use("/admin", admin)
 Router.use("/buscador", buscador)

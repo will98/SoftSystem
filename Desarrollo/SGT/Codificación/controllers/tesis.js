@@ -34,6 +34,7 @@ exports.crear = async (req, res, next) => {
         documento.palabras_clave = palabras_clave
         // Guardar un documento en la base de datos
         await documento.save()
+        res.send(documento)
     } catch (error) {
         next(new AppError(error, "back"))
     }

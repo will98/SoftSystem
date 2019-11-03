@@ -14,7 +14,7 @@ const Documento = new Schema({
     URI: String,
     descripcion: String,
     disciplina: String,
-    numero_vistas: Number,
+    numero_vistas: {type: Number, default: 0},
     tipo_documento: {type: Number, ref: "TipoDocumento"},
     autores: [String],
     asesores: [String],

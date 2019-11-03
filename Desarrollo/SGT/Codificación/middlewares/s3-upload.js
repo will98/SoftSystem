@@ -14,7 +14,7 @@ module.exports = multer({
         key: function (req, file, cb) {
             console.log(file);
             const name = `${Date.now()}.pdf`
-            req.body.URL_archivo = name
+            req.body.URL_archivo = `https://unmsm-sgt.s3.us-east-2.amazonaws.com/${name}`
             cb(null, name);
         }
     })

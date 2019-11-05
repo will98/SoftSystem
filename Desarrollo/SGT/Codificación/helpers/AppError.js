@@ -1,9 +1,9 @@
 class AppError extends Error {
-    constructor(error, redirect) {
+    constructor(error, redirect= "/") {
       super();
       Error.captureStackTrace(this, this.constructor);
       this.error = error;
-      this.redirect = redirect;
+      this.redirect = redirect
     }
   }
   

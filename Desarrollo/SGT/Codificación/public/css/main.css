@@ -42,6 +42,27 @@ header, body, footer{
 	margin-bottom: 15px;
 }
 
+.h-hamburguesa{
+	width: 30px;
+	height: 20px;
+	display: none;
+	justify-content: space-between;
+	align-items:center;
+	flex-direction: column;
+	z-index: 22;
+	margin-top:4px;
+}
+
+.h-hamburguesa span{
+	
+	display: block;
+	margin: 3px;
+	width: 30px;
+	height: 3px;
+}
+
+
+
 /*footer*/
 /*footer{
 	text-align: center;
@@ -60,12 +81,44 @@ header, body, footer{
 	text-decoration: none;
 	padding: 5px 0;
 }
+/* TRANSICION*/
+.active {
+	display: block!important;
+	-webkit-animation: slide-down .5s ease-out;
+    -moz-animation: slide-down .5s ease-out;
+}
+.remove{
+	display: none!important;
+	-webkit-animation: slide-up .5s ease-out;
+    -moz-animation: slide-up .5s ease-out;
+}
+
+@-webkit-keyframes slide-down {
+	0% { opacity: 0; -webkit-transform: translateX(-100%); }   
+  100% { opacity: 1; -webkit-transform: translateX(0); }
+}
+@-moz-keyframes slide-down {
+	0% { opacity: 0; -moz-transform: translateX(-100%); }   
+  100% { opacity: 1; -moz-transform: translateX(0); }
+}
+
+@-webkit-keyframes slide-up {
+	100% { opacity: 1; -webkit-transform: translateX(0); }   
+  	0% { opacity: 0; -webkit-transform: translateX(-100%); }
+}
+@-moz-keyframes slide-up {
+	100% { opacity: 1; -moz-transform: translateX(0%); }   
+  	0% { opacity: 0; -moz-transform: translateX(-100%); }
+}
+/**/
+
 
 /*menu izquierda*/
 .menu-izq{
 	background: #F3F3F3;
 	padding: 30px 15px;
 }
+
 .menu-izq-row{
 	border: solid 1px #ADB6C2;
 	padding: 0;
@@ -102,7 +155,6 @@ header, body, footer{
 	margin-bottom: 15px;
 	padding: 0;
 }
-
 
 /*************** Fin de partials  ******************/
 
@@ -444,6 +496,18 @@ header, body, footer{
 	}
 	.h-row{
 		padding: 7px 0;
+	}
+
+	.h-hamburguesa{
+		display: block;
+	}
+
+	.h-hamburguesa span{
+		background-color:#fff ;
+	}
+	
+	.menu-izq{
+		display:none;
 	}
 }
 

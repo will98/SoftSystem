@@ -12,7 +12,7 @@ exports.mas_visitadas = (req, res, next) => {
     res.render('home/mas_visitadas', {title: "Tesis más visitadas", layout: "main"});
 }
 exports.rango_anios = (req, res, next) => {
-    res.render('home/rango_anios', {title: "Búsqueda por rango de años", layout: "main"});
+    res.render('buscador/rango_anios', {title: "Búsqueda por rango de años", layout: "main"});
 }
 exports.comunidades = (req, res, next) => {
     res.render('home/comunidades', {title: "Búsqueda por rango de años", layout: "main"});

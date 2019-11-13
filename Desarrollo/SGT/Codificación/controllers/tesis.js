@@ -20,7 +20,6 @@ exports.crear = async (req, res, next) => {
             URI: req.body.URI,
             descripcion: req.body.descripcion,
             disciplina: req.body.disciplina,
-            numero_vistas: 0,
             tipo_documento: 1
         });
         //Crear asesores

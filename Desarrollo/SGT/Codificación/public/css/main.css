@@ -612,3 +612,31 @@ header, body, footer{
 	height: 30px;
 	line-height : normal;
 }
+
+#primer-boton{
+	background-color: rgba(39, 55, 46, 0.16);
+	width: 260px;
+	height: 180px;
+}
+
+#segundo-boton{
+	background-color: rgba(39, 55, 46, 0.16);
+	width: 260px;
+	height: 180px;
+}
+
+.homeopciones{
+	text-align: center;
+}
+
+.carderecha{
+	padding-left: 150px;
+}
+
+.carizquierda{
+	padding-right: 150px;
+}
+
+#btn1{
+	background-color :rgba(39, 55, 46, 0.16);;
+}

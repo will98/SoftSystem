@@ -36,5 +36,9 @@ exports.palabra_clave = (req, res, next) => {
     res.render('Buscador/palabra_clave/palabra_clave', {title: "Palabra clave", layout: "main"});
 }
 exports.login = (req, res, next) => {
-    res.render('Admin/login/login', {title: "Puerta de Logeo", layout: "main2"});
+    res.render('acceso/login', {title: "Puerta de Logeo", layout: "main2"});
+}
+
+exports.homeadmin = (req, res, next) => {
+    res.render('Admin/homeadmin', {title: "Homeadmin", layout: "main2"});
 }

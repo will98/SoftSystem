@@ -1,4 +1,6 @@
 const Router = require('express').Router()
-const admin = require('../controllers/admin')
+const controller = require('../controllers/admin')
+
+Router.get("/homeadmin", controller.homeadmin)
 
 module.exports = Router

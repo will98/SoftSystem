@@ -18,7 +18,8 @@ const Documento = new Schema({
     tipo_documento: {type: Number, ref: "TipoDocumento"},
     autores: [String],
     asesores: [String],
-    palabras_clave: [String]
+    palabras_clave: [String],
+    restringido: {type: Boolean, default: false}
 }, {autoIndex: false})
 
 Documento.pre('save', async function (next) {

@@ -276,7 +276,8 @@ exports.rango_anios = async (req, res, next) => {
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
         const { previous_page, next_page} = util.getPagination(page, pages)
-
+        console.log(documentos);
+        
         res.render('buscador/rango_anios',
             {
                 title: "Búsqueda por rango de años",

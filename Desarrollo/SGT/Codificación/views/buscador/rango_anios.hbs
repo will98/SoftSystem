@@ -7,14 +7,14 @@
 			<div class="row">
 				<div class="slidecontainer col-12 col-lg-9">
 					<div class="row">
-						<div class="avanzado-select avanzado-paddingtop rangoanios-paddingtop col-12 col-lg-4">
+						{{!-- <div class="avanzado-select avanzado-paddingtop rangoanios-paddingtop col-12 col-lg-4">
 							<div class="avanzado-input avanzado-input-anio col-12">
 								<select>
 									<option value="">Año</option>
 									<option value="">Rango de Años</option>
 								</select>
 							</div>
-						</div>
+						</div> --}}
 						<div class="avanzado-select col-12 col-lg-4">
 							<div class="avanzado-label avanzado-label-anio col-12">
 								Año de Inicio
@@ -34,7 +34,6 @@
 					</div>
 				</div>
 				<div class="masvisitadas-buscar avanzado-paddingtop col-12 col-lg-3">
-
 					<button>Buscar</button>
 				</div>
 			</div>
@@ -45,23 +44,26 @@
 		{{#each documentos}}
 			<div class="home-tesis col-12">
 				<div class="home-tesis-cabecera1 col-12">
-					<i class="fas fa-unlock"></i>&nbsp;
-					Acceso restringido <span class="home-articulo">Artículo - {{@index}}</span>
+					{{#if this.restringido}}
+						<i class="fas fa-unlock"></i>&nbsp;
+						Acceso restringido <span class="home-articulo">Artículo - {{@index}}</span>
+					{{else}}
+						<i class="fas fa-lock-open"></i>&nbsp;
+						Acceso libre <span class="home-articulo">Artículo - {{@index}}</span>
+					{{/if}}
 				</div>
 				<div class="home-tesis-cuerpo1 col-12">
 					<div class="home-titulo col-12">
-						Implementación y puesta en marcha de una planta de anhídrido carbónico líquido
+						{{this.titulo}}
 					</div>
 					<div class="home-autor col-12">
-						Reyna Ramos, Julio Alberto (Universidad Nacional Mayor de San Marcos, 1985)
+						{{this.autores}} (Universidad Nacional Mayor de San Marcos, {{this.fecha}})
 					</div>
 					<div class="home-contenido col-12">
-						Propone la implementación de una fábrica de producción de anhidrido carbónico en la ciudad de Tacna
-						considerando que se cuenta con un mercado creciente y sin competencia en el lugar. Asimismo, el
-						estudio contempla el consumo ...
+						{{this.descripcion}}
 					</div>
 					<div class="home-visitas col-12">
-						Numero de visitas: 1564
+						Numero de visitas: {{this.numero_vistas}}
 					</div>
 				</div>
 			</div>

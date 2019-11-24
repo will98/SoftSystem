@@ -250,8 +250,17 @@ exports.mas_visitadas = async (req, res, next) => {
 
 
 exports.rango_anios = async (req, res, next) => {
+    console.log('hola');
     try {
+
+        console.log(req.min);
+
         const query = req.query
+
+
+        console.log(query.min);
+        console.log(req.max);
+
         const filter = {
             tipo_documento: 1
         }

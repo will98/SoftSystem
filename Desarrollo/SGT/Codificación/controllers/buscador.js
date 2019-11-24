@@ -3,10 +3,17 @@ const AppError = require("../helpers/AppError")
 
 const util = require('../helpers')
 
+console.log('1a.- buscador.buscar')
+
 exports.buscar = async (req, res, next) => {
+
+    console.log('1b.- buscador.buscar')
     try {
 
+
         const query = req.query
+
+        console.log(req.query)
         const filter = {
             tipo_documento: 1
         }
@@ -29,14 +36,31 @@ exports.buscar = async (req, res, next) => {
         const skip = limit * (page - 1)
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
-        res.status(200).send({
-            limit,
-            count,
-            page,
-            pages,
-            documentos,
-            titulo
-        })
+        const { previous_page, next_page} = util.getPagination(page, pages)
+        console.log(documentos);
+
+        res.render('buscador/buscar',
+            {
+                title: "Búsqueda por título de tesis",
+                layout: "main",
+                query,
+                limit,
+                count,
+                page,
+                pages,
+                previous_page,
+                next_page,
+                documentos
+            })
+
+        // res.status(200).send({
+        //     limit,
+        //     count,
+        //     page,
+        //     pages,
+        //     documentos,
+        //     titulo
+        // })
     } catch (error) {
         next(new AppError(error))
     }

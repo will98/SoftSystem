@@ -1,9 +1,9 @@
 exports.home = (req, res, next) => {
     res.render('home/home', {title: "Página de Inicio", layout: "main"});
 }
-
+console.log('0.- exports.buscar')
 exports.buscar = (req, res, next) => {
-    res.render('home/buscar', {title: "Buscar", layout: "main"});
+    res.render('buscador/buscar', {title: "Buscar", layout: "main"});
 }
 exports.busqueda_avanzada = (req, res, next) => {
     res.render('buscador/busqueda_avanzada', {title: "Búsqueda Avanzada", layout: "main3"});
@@ -21,10 +21,10 @@ exports.comunidad = (req, res, next) => {
     res.render('buscador/comunidad', {title: "Búsqueda por rango de años", layout: "main"});
 }
 exports.asesor = (req, res, next) => {
-    res.render('buscador/asesor/asesor', {title: "Asesor", layout: "main"});
+    res.render('buscador/asesor', {title: "Asesor", layout: "main"});
 }
 exports.comunidad_coleccion = (req, res, next) => {
-    res.render('buscador/comunidad_coleccion/comunidad_coleccion', {title: "Comunidad & Coleccion", layout: "main"});
+    res.render('buscador/comunidad_coleccion', {title: "Comunidad & Coleccion", layout: "main"});
 }
 exports.facultad = (req, res, next) => {
     res.render('buscador/facultad', {title: "Facultad", layout: "main"});
@@ -33,7 +33,7 @@ exports.grado_academico = (req, res, next) => {
     res.render('buscador/grado_academico', {title: "Grado Académico", layout: "main"});
 }
 exports.palabra_clave = (req, res, next) => {
-    res.render('buscador/palabra_clave/palabra_clave', {title: "Palabra clave", layout: "main"});
+    res.render('buscador/palabra_clave', {title: "Palabra clave", layout: "main"});
 }
 exports.login = (req, res, next) => {
     res.render('acceso/login', {title: "Puerta de Logeo", layout: "main2"});

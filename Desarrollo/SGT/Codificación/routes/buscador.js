@@ -2,6 +2,8 @@ const Router = require('express').Router()
 const buscador = require('../controllers/buscador')
 
 Router.get("/", buscador.buscar)
+console.log('2.- buscador.buscar')
+Router.get("/buscar", buscador.buscar)
 Router.get("/asesor", buscador.asesor)
 Router.get("/comunidad_coleccion", buscador.comunidad_coleccion)
 Router.get("/facultad", buscador.facultad)

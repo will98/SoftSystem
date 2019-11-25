@@ -70,6 +70,7 @@ exports.buscar = async (req, res, next) => {
 
 exports.asesor = async (req, res, next) => {
     console.log('buscar3');
+
     try {
         const query = req.query
         const filter = {
@@ -100,13 +101,18 @@ exports.asesor = async (req, res, next) => {
 
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
-        res.status(200).send({
-            limit,
-            count,
-            page,
-            pages,
-            documentos
-        })
+        res.render('buscador/asesor',
+            {
+                title: "Búsqueda por asesor de tesis",
+                layout: "main",
+                query,
+                limit,
+                count,
+                page,
+                pages,
+                documentos
+            })
+        
     } catch (error) {
         next(new AppError(error))
     }

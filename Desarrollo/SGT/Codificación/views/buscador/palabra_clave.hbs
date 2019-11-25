@@ -1,27 +1,128 @@
 <div class="col-12 home-inicio">Palabra Clave</div>
-<hr>
+<br>
 <div class="col-12 subtitulo">Palabras clave</div>
 <div class="col-12">
-    <form class="form-group row">
+    <form action="/buscador/palabra_clave" method="get" class="form-group row">
         <div class="col-12 col-lg-9">
-            <input type="text" class="form-control" placeholder="Ingrese palabras clave...">
+            <input type="text" class="form-control" name="clave" placeholder="Ingrese palabras claves..." value="{{query.clave}}">
         </div>
         <div class="col-12 col-lg-1 mt-3"></div>
         <div class="col-12 col-lg-2">
-            <button class="btn btn-dark btn-block">Buscar</button>
+            <button class="btn btn-dark btn-block" type="submit" >Buscar</button>
         </div>
     </form>
+    <div class="home-lista-tesis col-12">
+
+		{{#each documentos}}
+			<div class="home-tesis col-12">
+				<div class="home-tesis-cabecera1 col-12">
+					{{#if this.restringido}}
+						<i class="fas fa-unlock"></i>&nbsp;
+						Acceso restringido <span class="home-articulo">Artículo - {{@index}}</span>
+					{{else}}
+						<i class="fas fa-lock-open"></i>&nbsp;
+						Acceso libre <span class="home-articulo">Artículo - {{@index}}</span>
+					{{/if}}
+				</div>
+				<div class="home-tesis-cuerpo1 col-12">
+					<div class="home-titulo col-12">
+						{{this.titulo}}
+					</div>
+					<div class="home-autor col-12">
+						{{this.autores}} (Universidad Nacional Mayor de San Marcos, {{this.fecha}})
+					</div>
+					<div class="home-contenido col-12">
+						{{this.descripcion}}
+					</div>
+					<div class="home-visitas col-12">
+						Numero de visitas: {{this.numero_vistas}}
+					</div>
+				</div>
+			</div>
+			<br />
+		{{/each}}
+
+
+		{{!-- <div class="home-tesis col-12">
+			<div class="home-tesis-cabecera1 col-12">
+				<i class="fas fa-unlock"></i>&nbsp;
+				Acceso restringido <span class="home-articulo">Artículo</span>
+			</div>
+			<div class="home-tesis-cuerpo1 col-12">
+				<div class="home-titulo col-12">
+					Implementación y puesta en marcha de una planta de anhídrido carbónico líquido
+				</div>
+				<div class="home-autor col-12">
+					Reyna Ramos, Julio Alberto (Universidad Nacional Mayor de San Marcos, 1985)
+				</div>
+				<div class="home-contenido col-12">
+					Propone la implementación de una fábrica de producción de anhidrido carbónico en la ciudad de Tacna
+					considerando que se cuenta con un mercado creciente y sin competencia en el lugar. Asimismo, el
+					estudio contempla el consumo ...
+				</div>
+				<div class="home-visitas col-12">
+					Numero de visitas: 1564
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="home-tesis col-12">
+			<div class="home-tesis-cabecera2 col-12">
+				<i class="fas fa-unlock"></i>&nbsp;
+				Acceso restringido <span class="home-articulo">Tesis</span>
+			</div>
+			<div class="home-tesis-cuerpo2 col-12">
+				<div class="home-titulo col-12">
+					Implementación y puesta en marcha de una planta de anhídrido carbónico líquido
+				</div>
+				<div class="home-autor col-12">
+					Reyna Ramos, Julio Alberto (Universidad Nacional Mayor de San Marcos, 1985)
+				</div>
+				<div class="home-contenido col-12">
+					Propone la implementación de una fábrica de producción de anhidrido carbónico en la ciudad de Tacna
+					considerando que se cuenta con un mercado creciente y sin competencia en el lugar. Asimismo, el
+					estudio contempla el consumo ...
+				</div>
+				<div class="home-visitas col-12">
+					Numero de visitas: 1564
+				</div>
+			</div>
+		</div>
+		<br /> --}}
+	</div>
+
+
+	{{#if pages}}
+		<div class="paginacion col-12">
+			<div class="paginado row">
+				<form class="pag">
+					<a class="prev align-middle" href="./rango_anios?page={{previous_page}}&min={{query.min}}&max={{query.max}}" title="Anterior">
+						<i class="fas fa-caret-square-left"></i>
+					</a>
+					<span class="page-nr align-middle">
+						Página
+						<span class="field">
+							<input class="page-number" type="number" name="page" title="Página {{page}}" value={{page}} min=1 max={{pages}} />
+							<span class="pagination-error error-message d-none">
+								<strong>
+									<span class="invalid-page-number"></span>
+								</strong>
+								is not a valid page number. Please enter a number between
+								<strong>1</strong>
+								and
+								<strong>1,229</strong>
+							</span>
+						</span>
+						de
+						<span class="number-of-pages">{{pages}}</span>
+					</span>
+					<input class="d-none" type="hidden" name="min" value={{query.min}}>
+					<input class="d-none" type="hidden" name="max" value={{query.max}}>
+					<a class="next align-middle" href="./rango_anios?page={{next_page}}&min={{query.min}}&max={{query.max}}" title="Siguiente">
+						<i class="fas fa-caret-square-right"></i>
+					</a>
+				</form>
+			</div>
+		</div>
+	{{/if}}
 </div>
-<nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-end">
-        <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Antes</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#">Siguiente</a>
-        </li>
-    </ul>
-</nav>

@@ -210,13 +210,17 @@ exports.palabra_clave = async (req, res, next) => {
 
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
-        res.status(200).send({
-            limit,
-            count,
-            page,
-            pages,
-            documentos
-        })
+        res.render('buscador/palabra_clave',
+            {
+                title: "Búsqueda por palabras claves",
+                layout: "main",
+                query,
+                limit,
+                count,
+                page,
+                pages,
+                documentos
+            })
     } catch (error) {
         next(new AppError(error))
     }

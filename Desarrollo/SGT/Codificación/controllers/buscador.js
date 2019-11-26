@@ -3,10 +3,17 @@ const AppError = require("../helpers/AppError")
 
 const util = require('../helpers')
 
+console.log('1a.- buscador.buscar')
+
 exports.buscar = async (req, res, next) => {
+
+    console.log('1b.- buscador.buscar')
     try {
 
+
         const query = req.query
+
+        console.log(req.query)
         const filter = {
             tipo_documento: 1
         }
@@ -29,14 +36,31 @@ exports.buscar = async (req, res, next) => {
         const skip = limit * (page - 1)
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
-        res.status(200).send({
-            limit,
-            count,
-            page,
-            pages,
-            documentos,
-            titulo
-        })
+        const { previous_page, next_page} = util.getPagination(page, pages)
+        console.log(documentos);
+
+        res.render('buscador/buscar',
+            {
+                title: "Búsqueda por título de tesis",
+                layout: "main",
+                query,
+                limit,
+                count,
+                page,
+                pages,
+                previous_page,
+                next_page,
+                documentos
+            })
+
+        // res.status(200).send({
+        //     limit,
+        //     count,
+        //     page,
+        //     pages,
+        //     documentos,
+        //     titulo
+        // })
     } catch (error) {
         next(new AppError(error))
     }
@@ -45,7 +69,7 @@ exports.buscar = async (req, res, next) => {
 
 
 exports.asesor = async (req, res, next) => {
-    console.log('buscar3');
+
     try {
         const query = req.query
         const filter = {
@@ -76,22 +100,38 @@ exports.asesor = async (req, res, next) => {
 
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
-        res.status(200).send({
-            limit,
-            count,
-            page,
-            pages,
-            documentos
-        })
+        res.render('buscador/asesor',
+            {
+                title: "Búsqueda por asesor de tesis",
+                layout: "main",
+                query,
+                limit,
+                count,
+                page,
+                pages,
+                documentos
+            })
+        
     } catch (error) {
         next(new AppError(error))
     }
 }
 
 
-exports.comunidad_coleccion = async (req, res, next) => {
-    console.log('buscar4');
+exports.comunidades_coleccion = async (req, res, next) => {
+    console.log('comunidades y coleccion');
     try {
+
+        throw new Error("No soportado")
+    } catch (error) {
+        next(new AppError(error))
+    }
+}
+
+exports.comunidad = async (req, res, next) => {
+    console.log('comunidad');
+    try {
+
         throw new Error("No soportado")
     } catch (error) {
         next(new AppError(error))
@@ -109,7 +149,7 @@ exports.facultad = async (req, res, next) => {
 
 
 exports.grado_academico = async (req, res, next) => {
-    console.log('buscar5');
+   
     try {
         const query = req.query
         const filter = {
@@ -149,7 +189,7 @@ exports.grado_academico = async (req, res, next) => {
 
 
 exports.palabra_clave = async (req, res, next) => {
-    console.log('buscar6');
+    
     try {
         const query = req.query
         const filter = {
@@ -194,7 +234,7 @@ exports.palabra_clave = async (req, res, next) => {
 
 
 exports.buqueda_avanzada = async (req, res, next) => {
-    console.log('buscar7');
+    
     try {
         throw new Error("No soportado")
     } catch (error) {
@@ -204,10 +244,9 @@ exports.buqueda_avanzada = async (req, res, next) => {
 
 
 exports.mas_visitadas = async (req, res, next) => {
-    console.log('buscar8');
-    console.log('hola visitadas');
+    
     try {
-        console.log('hola visitadas');
+        
         const query = req.query
         const filter = {
             tipo_documento: 1
@@ -250,8 +289,17 @@ exports.mas_visitadas = async (req, res, next) => {
 
 
 exports.rango_anios = async (req, res, next) => {
+    
     try {
+
+        console.log(req.min);
+
         const query = req.query
+
+
+        console.log(query.min);
+        console.log(req.max);
+
         const filter = {
             tipo_documento: 1
         }

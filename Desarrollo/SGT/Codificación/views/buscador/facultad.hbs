@@ -33,4 +33,38 @@
             <button class="btn btn-dark btn-block">Buscar</button>
         </div>
     </form>
+    <div class="paginacion col-12">
+        <div class="paginado row">
+            <form class="pag">
+                <a class="prev align-middle"
+                    href="./rango_anios?page={{previous_page}}&min={{query.min}}&max={{query.max}}" title="Anterior">
+                    <i class="fas fa-caret-square-left"></i>
+                </a>
+                <span class="page-nr align-middle">
+                    Página
+                    <span class="field">
+                        <input class="page-number" type="number" name="page" title="Página {{page}}" value={{page}}
+                            min=1 max={{pages}} />
+                        <span class="pagination-error error-message d-none">
+                            <strong>
+                                <span class="invalid-page-number"></span>
+                            </strong>
+                            is not a valid page number. Please enter a number between
+                            <strong>1</strong>
+                            and
+                            <strong>1,229</strong>
+                        </span>
+                    </span>
+                    de
+                    <span class="number-of-pages">{{pages}}</span>
+                </span>
+                <input class="d-none" type="hidden" name="min" value={{query.min}}>
+                <input class="d-none" type="hidden" name="max" value={{query.max}}>
+                <a class="next align-middle" href="./rango_anios?page={{next_page}}&min={{query.min}}&max={{query.max}}"
+                    title="Siguiente">
+                    <i class="fas fa-caret-square-right"></i>
+                </a>
+            </form>
+        </div>
+    </div>
 </div>

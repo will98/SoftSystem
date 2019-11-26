@@ -69,7 +69,6 @@ exports.buscar = async (req, res, next) => {
 
 
 exports.asesor = async (req, res, next) => {
-    console.log('buscar3');
 
     try {
         const query = req.query
@@ -119,9 +118,20 @@ exports.asesor = async (req, res, next) => {
 }
 
 
-exports.comunidad_coleccion = async (req, res, next) => {
-    console.log('buscar4');
+exports.comunidades_coleccion = async (req, res, next) => {
+    console.log('comunidades y coleccion');
     try {
+
+        throw new Error("No soportado")
+    } catch (error) {
+        next(new AppError(error))
+    }
+}
+
+exports.comunidad = async (req, res, next) => {
+    console.log('comunidad');
+    try {
+
         throw new Error("No soportado")
     } catch (error) {
         next(new AppError(error))
@@ -139,7 +149,7 @@ exports.facultad = async (req, res, next) => {
 
 
 exports.grado_academico = async (req, res, next) => {
-    console.log('buscar5');
+   
     try {
         const query = req.query
         const filter = {
@@ -179,7 +189,7 @@ exports.grado_academico = async (req, res, next) => {
 
 
 exports.palabra_clave = async (req, res, next) => {
-    console.log('buscar6');
+    
     try {
         const query = req.query
         const filter = {
@@ -224,7 +234,7 @@ exports.palabra_clave = async (req, res, next) => {
 
 
 exports.buqueda_avanzada = async (req, res, next) => {
-    console.log('buscar7');
+    
     try {
         throw new Error("No soportado")
     } catch (error) {
@@ -234,10 +244,9 @@ exports.buqueda_avanzada = async (req, res, next) => {
 
 
 exports.mas_visitadas = async (req, res, next) => {
-    console.log('buscar8');
-    console.log('hola visitadas');
+    
     try {
-        console.log('hola visitadas');
+        
         const query = req.query
         const filter = {
             tipo_documento: 1
@@ -280,7 +289,7 @@ exports.mas_visitadas = async (req, res, next) => {
 
 
 exports.rango_anios = async (req, res, next) => {
-    console.log('hola');
+    
     try {
 
         console.log(req.min);

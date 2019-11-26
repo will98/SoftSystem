@@ -360,7 +360,7 @@ header, body, footer{
 	padding: 30px 0;
 }
 .comunidades-comunidad {
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 }
 .comunidades-comunidad img{
 	height: 64px;
@@ -467,6 +467,7 @@ header, body, footer{
 		padding: 30px 15px;
 	}
 
+
 }
 
 @media (min-width: 992px){
@@ -519,6 +520,9 @@ header, body, footer{
 	}
 	.busqueda-campos-borde .row{
 		margin-bottom: 15px;
+	}
+	.comunidades-comunidad {
+		margin-bottom: 5px;
 	}
 }
 /*estilo loging*/

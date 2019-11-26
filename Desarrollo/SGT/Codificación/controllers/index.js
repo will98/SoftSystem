@@ -14,17 +14,14 @@ exports.mas_visitadas = (req, res, next) => {
 exports.rango_anios = (req, res, next) => {
     res.render('buscador/rango_anios', {title: "Búsqueda por rango de años", layout: "main"});
 }
-exports.comunidades = (req, res, next) => {
-    res.render('buscador/comunidades', {title: "Búsqueda por rango de años", layout: "main"});
+exports.comunidades_coleccion = (req, res, next) => {
+    res.render('buscador/comunidades_coleccion', {title: "Comunidades & Colección", layout: "main"});
 }
 exports.comunidad = (req, res, next) => {
-    res.render('buscador/comunidad', {title: "Búsqueda por rango de años", layout: "main"});
+    res.render('buscador/comunidad', {title: "Comunidad", layout: "main"});
 }
 exports.asesor = (req, res, next) => {
     res.render('buscador/asesor', {title: "Asesor", layout: "main"});
-}
-exports.comunidad_coleccion = (req, res, next) => {
-    res.render('buscador/comunidad_coleccion', {title: "Comunidad & Coleccion", layout: "main"});
 }
 exports.facultad = (req, res, next) => {
     res.render('buscador/facultad', {title: "Facultad", layout: "main"});

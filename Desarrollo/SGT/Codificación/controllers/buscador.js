@@ -1,14 +1,19 @@
 const Documento = require('../models/Documento')
 const AppError = require("../helpers/AppError")
 
-console.log('buscar1');
+const util = require('../helpers')
+
+console.log('1a.- buscador.buscar')
 
 exports.buscar = async (req, res, next) => {
-    console.log('buscar2');
-    
+
+    console.log('1b.- buscador.buscar')
     try {
 
+
         const query = req.query
+
+        console.log(req.query)
         const filter = {
             tipo_documento: 1
         }
@@ -31,14 +36,31 @@ exports.buscar = async (req, res, next) => {
         const skip = limit * (page - 1)
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
-        res.status(200).send({
-            limit,
-            count,
-            page,
-            pages,
-            documentos,
-            titulo
-        })
+        const { previous_page, next_page} = util.getPagination(page, pages)
+        console.log(documentos);
+
+        res.render('buscador/buscar',
+            {
+                title: "Búsqueda por título de tesis",
+                layout: "main",
+                query,
+                limit,
+                count,
+                page,
+                pages,
+                previous_page,
+                next_page,
+                documentos
+            })
+
+        // res.status(200).send({
+        //     limit,
+        //     count,
+        //     page,
+        //     pages,
+        //     documentos,
+        //     titulo
+        // })
     } catch (error) {
         next(new AppError(error))
     }
@@ -47,7 +69,7 @@ exports.buscar = async (req, res, next) => {
 
 
 exports.asesor = async (req, res, next) => {
-    console.log('buscar3');
+
     try {
         const query = req.query
         const filter = {
@@ -66,7 +88,7 @@ exports.asesor = async (req, res, next) => {
         if (query.asesor && query.asesor != '') {
             filter.asesores = {
                 $elemMatch: {
-                    $regex: new RegExp(`${query.asesor}+?`), 
+                    $regex: new RegExp(`${query.asesor}+?`),
                     $options: 'i'
                 }
             }
@@ -75,25 +97,41 @@ exports.asesor = async (req, res, next) => {
         const count = await Documento.countDocuments(filter)
         const pages = Math.ceil(count / limit)
         const skip = limit * (page - 1)
-        
+
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
-        res.status(200).send({
-            limit,
-            count,
-            page,
-            pages,
-            documentos
-        })
+        res.render('buscador/asesor',
+            {
+                title: "Búsqueda por asesor de tesis",
+                layout: "main",
+                query,
+                limit,
+                count,
+                page,
+                pages,
+                documentos
+            })
+        
     } catch (error) {
         next(new AppError(error))
     }
 }
 
 
-exports.comunidad_coleccion = async (req, res, next) => {
-    console.log('buscar4');
+exports.comunidades_coleccion = async (req, res, next) => {
+    console.log('comunidades y coleccion');
     try {
+
+        throw new Error("No soportado")
+    } catch (error) {
+        next(new AppError(error))
+    }
+}
+
+exports.comunidad = async (req, res, next) => {
+    console.log('comunidad');
+    try {
+
         throw new Error("No soportado")
     } catch (error) {
         next(new AppError(error))
@@ -111,7 +149,7 @@ exports.facultad = async (req, res, next) => {
 
 
 exports.grado_academico = async (req, res, next) => {
-    console.log('buscar5');
+   
     try {
         const query = req.query
         const filter = {
@@ -134,7 +172,7 @@ exports.grado_academico = async (req, res, next) => {
         const count = await Documento.countDocuments(filter)
         const pages = Math.ceil(count / limit)
         const skip = limit * (page - 1)
-        
+
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
         res.status(200).send({
@@ -151,7 +189,7 @@ exports.grado_academico = async (req, res, next) => {
 
 
 exports.palabra_clave = async (req, res, next) => {
-    console.log('buscar6');
+    
     try {
         const query = req.query
         const filter = {
@@ -170,7 +208,7 @@ exports.palabra_clave = async (req, res, next) => {
         if (query.clave && query.clave != '') {
             filter.palabras_clave = {
                 $elemMatch: {
-                    $regex: new RegExp(`${query.clave}+?`), 
+                    $regex: new RegExp(`${query.clave}+?`),
                     $options: 'i'
                 }
             }
@@ -179,7 +217,7 @@ exports.palabra_clave = async (req, res, next) => {
         const count = await Documento.countDocuments(filter)
         const pages = Math.ceil(count / limit)
         const skip = limit * (page - 1)
-        
+
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
         res.status(200).send({
@@ -196,7 +234,7 @@ exports.palabra_clave = async (req, res, next) => {
 
 
 exports.buqueda_avanzada = async (req, res, next) => {
-    console.log('buscar7');
+    
     try {
         throw new Error("No soportado")
     } catch (error) {
@@ -206,10 +244,9 @@ exports.buqueda_avanzada = async (req, res, next) => {
 
 
 exports.mas_visitadas = async (req, res, next) => {
-    console.log('buscar8');
-    console.log('hola visitadas');
+    
     try {
-        console.log('hola visitadas');
+        
         const query = req.query
         const filter = {
             tipo_documento: 1
@@ -225,19 +262,19 @@ exports.mas_visitadas = async (req, res, next) => {
         }
 
         if (query.min && query.min != '') {
-            filter.numero_vistas = { $gte: parseInt(query.min)}
+            filter.numero_vistas = { $gte: parseInt(query.min) }
         }
 
         if (query.max && query.max != '') {
-            filter.numero_vistas = { $lte: parseInt(query.max)}
+            filter.numero_vistas = { $lte: parseInt(query.max) }
         }
 
         const count = await Documento.countDocuments(filter)
         const pages = Math.ceil(count / limit)
         const skip = limit * (page - 1)
-        
-        const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "numero_vistas": -1, "fecha": -1 })
 
+        const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "numero_vistas": -1, "fecha": -1 })
+        
         res.status(200).send({
             limit,
             count,
@@ -252,9 +289,17 @@ exports.mas_visitadas = async (req, res, next) => {
 
 
 exports.rango_anios = async (req, res, next) => {
-    console.log('buscar9');
+    
     try {
+
+        console.log(req.min);
+
         const query = req.query
+
+
+        console.log(query.min);
+        console.log(req.max);
+
         const filter = {
             tipo_documento: 1
         }
@@ -268,27 +313,33 @@ exports.rango_anios = async (req, res, next) => {
             limit = parseInt(query.limit)
         }
 
-        if (query.min && query.min != '') {
-            filter.fecha = { $gte: parseInt(query.min)}
+        if (query.min && query.min != '' && query.max && query.max != '') {
+            filter.fecha = { $gte: parseInt(query.min), $lte: parseInt(query.max) }
         }
-
-        if (query.max && query.max != '') {
-            filter.fecha = { $lte: parseInt(query.max)}
-        }
-
+        
         const count = await Documento.countDocuments(filter)
         const pages = Math.ceil(count / limit)
         const skip = limit * (page - 1)
-        
+
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
-        res.status(200).send({
-            limit,
-            count,
-            page,
-            pages,
-            documentos
-        })
+        const { previous_page, next_page} = util.getPagination(page, pages)
+        console.log(documentos);
+        
+        res.render('buscador/rango_anios',
+            {
+                title: "Búsqueda por rango de años",
+                layout: "main",
+                query,
+                limit,
+                count,
+                page,
+                pages,
+                previous_page,
+                next_page,
+                documentos
+            })
+
     } catch (error) {
         next(new AppError(error))
     }

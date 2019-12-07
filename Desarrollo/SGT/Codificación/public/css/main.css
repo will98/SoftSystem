@@ -412,7 +412,7 @@ header, body, footer{
 	padding: 30px 0;
 }
 .comunidades-comunidad {
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 }
 .comunidades-comunidad img{
 	height: 64px;
@@ -531,6 +531,7 @@ header, body, footer{
 		padding: 30px 15px;
 	}
 
+
 }
 
 @media (min-width: 992px){
@@ -584,6 +585,9 @@ header, body, footer{
 	.busqueda-campos-borde .row{
 		margin-bottom: 15px;
 	}
+	.comunidades-comunidad {
+		margin-bottom: 5px;
+	}
 }
 /*estilo loging*/
 
@@ -616,4 +620,91 @@ header, body, footer{
 		margin-right: 50px;
 	}
 
+}
+
+/*menu home admin*/
+.menu-homeadmin{
+	margin: 0;
+	font-family: sans-serif;
+}
+
+.menu-home{
+	width:100%;
+	background: #4E94AB;
+}
+
+#btn-menu{
+	display: none;
+}
+
+.menu-home label{
+	display: none;
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	border-right: 1px solid #ffffff;
+}
+
+.menu-home label:hover{
+	cursor: pointer;
+	background: #B90413;
+}
+
+.menu ul {
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	display: flex;
+	
+}
+
+.menu li{
+	border-right: 1px solid #fff;
+}
+
+.menu li:hover{
+	background: rgba(0,0, 0,0,3);
+}
+
+.menu li a{
+	display: block;
+	padding: 15px 20px;
+	color: rgb(173, 65, 65);
+	text-decoration: none;
+}
+
+#btn-salir{
+	background-color: #8190A5;
+	border-radius: 5px;
+	width: 118px;
+	height: 30px;
+	line-height : normal;
+}
+
+#primer-boton{
+	background-color: rgba(39, 55, 46, 0.16);
+	width: 260px;
+	height: 180px;
+}
+
+#segundo-boton{
+	background-color: rgba(39, 55, 46, 0.16);
+	width: 260px;
+	height: 180px;
+}
+
+.homeopciones{
+	text-align: center;
+}
+
+.carderecha{
+	padding-left: 150px;
+}
+
+.carizquierda{
+	padding-right: 150px;
+}
+
+#btn1{
+	background-color :rgba(39, 55, 46, 0.16);;
 }

@@ -85,6 +85,18 @@ exports.asesor = async (req, res, next) => {
             limit = parseInt(query.limit)
         }
 
+        if (query.page && query.page != '') {
+            page = parseInt(query.page)
+        }
+
+        if (query.limit && query.limit != '') {
+            limit = parseInt(query.limit)
+        }
+
+        if (query.min && query.min != '' && query.max && query.max != '') {
+            filter.fecha = { $gte: parseInt(query.min), $lte: parseInt(query.max) }
+        }
+
         if (query.asesor && query.asesor != '') {
             filter.asesores = {
                 $elemMatch: {
@@ -99,6 +111,7 @@ exports.asesor = async (req, res, next) => {
         const skip = limit * (page - 1)
 
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
+        const { previous_page, next_page} = util.getPagination(page, pages)
 
         res.render('buscador/asesor',
             {
@@ -109,6 +122,9 @@ exports.asesor = async (req, res, next) => {
                 count,
                 page,
                 pages,
+                query,
+                previous_page,
+                next_page,
                 documentos
             })
         
@@ -169,17 +185,37 @@ exports.grado_academico = async (req, res, next) => {
             filter.grado = query.grado
         }
 
+        if (query.page && query.page != '') {
+            page = parseInt(query.page)
+        }
+
+        if (query.limit && query.limit != '') {
+            limit = parseInt(query.limit)
+        }
+
+        if (query.min && query.min != '' && query.max && query.max != '') {
+            filter.fecha = { $gte: parseInt(query.min), $lte: parseInt(query.max) }
+        }
+
         const count = await Documento.countDocuments(filter)
         const pages = Math.ceil(count / limit)
         const skip = limit * (page - 1)
 
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
-        res.status(200).send({
+        const { previous_page, next_page} = util.getPagination(page, pages)
+
+        res.render('buscador/grado_academico',
+        {
+            title: "Búsqueda por grado academico de tesis",
+            layout: "main",
             limit,
             count,
             page,
             pages,
+            query,
+            previous_page,
+            next_page,
             documentos
         })
     } catch (error) {
@@ -201,8 +237,20 @@ exports.palabra_clave = async (req, res, next) => {
             page = parseInt(query.page)
         }
 
+        if (query.min && query.min != '') {
+            filter.numero_vistas = { $gte: parseInt(query.min) }
+        }
+
+        if (query.max && query.max != '') {
+            filter.numero_vistas = { $lte: parseInt(query.max) }
+        }
+
         if (query.limit && query.limit != '') {
             limit = parseInt(query.limit)
+        }
+        
+        if (query.min && query.min != '' && query.max && query.max != '') {
+            filter.fecha = { $gte: parseInt(query.min), $lte: parseInt(query.max) }
         }
 
         if (query.clave && query.clave != '') {
@@ -220,13 +268,21 @@ exports.palabra_clave = async (req, res, next) => {
 
         const documentos = await Documento.find(filter).skip(skip).limit(limit).sort({ "fecha": -1 })
 
-        res.status(200).send({
-            limit,
-            count,
-            page,
-            pages,
-            documentos
-        })
+        const { previous_page, next_page} = util.getPagination(page, pages)
+
+        res.render('buscador/palabra_clave',
+            {
+                title: "Búsqueda por palabras claves",
+                layout: "main",
+                query,
+                limit,
+                count,
+                page,
+                pages,
+                previous_page,
+                next_page,
+                documentos
+            })
     } catch (error) {
         next(new AppError(error))
     }

@@ -40,54 +40,6 @@
 			</div>
 			<br />
 		{{/each}}
-
-
-		{{!-- <div class="home-tesis col-12">
-			<div class="home-tesis-cabecera1 col-12">
-				<i class="fas fa-unlock"></i>&nbsp;
-				Acceso restringido <span class="home-articulo">Artículo</span>
-			</div>
-			<div class="home-tesis-cuerpo1 col-12">
-				<div class="home-titulo col-12">
-					Implementación y puesta en marcha de una planta de anhídrido carbónico líquido
-				</div>
-				<div class="home-autor col-12">
-					Reyna Ramos, Julio Alberto (Universidad Nacional Mayor de San Marcos, 1985)
-				</div>
-				<div class="home-contenido col-12">
-					Propone la implementación de una fábrica de producción de anhidrido carbónico en la ciudad de Tacna
-					considerando que se cuenta con un mercado creciente y sin competencia en el lugar. Asimismo, el
-					estudio contempla el consumo ...
-				</div>
-				<div class="home-visitas col-12">
-					Numero de visitas: 1564
-				</div>
-			</div>
-		</div>
-		<br />
-		<div class="home-tesis col-12">
-			<div class="home-tesis-cabecera2 col-12">
-				<i class="fas fa-unlock"></i>&nbsp;
-				Acceso restringido <span class="home-articulo">Tesis</span>
-			</div>
-			<div class="home-tesis-cuerpo2 col-12">
-				<div class="home-titulo col-12">
-					Implementación y puesta en marcha de una planta de anhídrido carbónico líquido
-				</div>
-				<div class="home-autor col-12">
-					Reyna Ramos, Julio Alberto (Universidad Nacional Mayor de San Marcos, 1985)
-				</div>
-				<div class="home-contenido col-12">
-					Propone la implementación de una fábrica de producción de anhidrido carbónico en la ciudad de Tacna
-					considerando que se cuenta con un mercado creciente y sin competencia en el lugar. Asimismo, el
-					estudio contempla el consumo ...
-				</div>
-				<div class="home-visitas col-12">
-					Numero de visitas: 1564
-				</div>
-			</div>
-		</div>
-		<br /> --}}
 	</div>
 
 
@@ -95,7 +47,7 @@
 		<div class="paginacion col-12">
 			<div class="paginado row">
 				<form class="pag">
-					<a class="prev align-middle" href="./rango_anios?page={{previous_page}}&min={{query.min}}&max={{query.max}}" title="Anterior">
+					<a class="prev align-middle" href="./asesor?asesor={{query.asesor}}&page={{previous_page}}&min={{query.min}}&max={{query.max}}" title="Anterior">
 						<i class="fas fa-caret-square-left"></i>
 					</a>
 					<span class="page-nr align-middle">
@@ -117,7 +69,7 @@
 					</span>
 					<input class="d-none" type="hidden" name="min" value={{query.min}}>
 					<input class="d-none" type="hidden" name="max" value={{query.max}}>
-					<a class="next align-middle" href="./rango_anios?page={{next_page}}&min={{query.min}}&max={{query.max}}" title="Siguiente">
+					<a class="next align-middle" href="./asesor?asesor={{query.asesor}}&page={{next_page}}&min={{query.min}}&max={{query.max}}" title="Siguiente">
 						<i class="fas fa-caret-square-right"></i>
 					</a>
 				</form>

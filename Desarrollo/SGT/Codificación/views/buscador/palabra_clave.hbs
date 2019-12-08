@@ -96,7 +96,7 @@
 		<div class="paginacion col-12">
 			<div class="paginado row">
 				<form class="pag">
-					<a class="prev align-middle" href="./rango_anios?page={{previous_page}}&min={{query.min}}&max={{query.max}}" title="Anterior">
+					<a class="prev align-middle" href="./palabra_clave?clave={{query.clave}}&page={{previous_page}}&min={{query.min}}&max={{query.max}}" title="Anterior">
 						<i class="fas fa-caret-square-left"></i>
 					</a>
 					<span class="page-nr align-middle">
@@ -118,7 +118,7 @@
 					</span>
 					<input class="d-none" type="hidden" name="min" value={{query.min}}>
 					<input class="d-none" type="hidden" name="max" value={{query.max}}>
-					<a class="next align-middle" href="./rango_anios?page={{next_page}}&min={{query.min}}&max={{query.max}}" title="Siguiente">
+					<a class="next align-middle" href="./palabra_clave?clave={{query.clave}}&page={{next_page}}&min={{query.min}}&max={{query.max}}" title="Siguiente">
 						<i class="fas fa-caret-square-right"></i>
 					</a>
 				</form>

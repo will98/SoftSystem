@@ -1,4 +1,4 @@
-const Tipo = require('../models/Tipo')
+const Facultad = require('../models/Facultad')
 const Documento = require('../models/Documento')
 const AppError = require("../helpers/AppError")
 
@@ -146,12 +146,14 @@ exports.comunidad = async (req, res, next) => {
     console.log('comunidad');
     try {
         const query = req.query;
-        const stage = {}
+        const stage = []
         
-        if (query && query.comunidad != '') {
-            stage["$match"] = {
-                "tipo.escuela_profesional.facultad.area_academica._id": parseInt(query.comunidad)
-            }
+        if (query.comunidad  && query.comunidad != '') {
+            stage.push({
+                $match: {
+                    "tipo.escuela_profesional.facultad.area_academica._id" : parseInt(query.comunidad)
+                }
+            })
         }
 
         let limit = 10;
@@ -207,7 +209,109 @@ exports.comunidad = async (req, res, next) => {
             {
                 $unwind: "$tipo.escuela_profesional.facultad.area_academica"
             },
-            stage,
+            ...stage,
+            {
+                $facet: {
+                    count: [
+                        {
+                            $count: "count"
+                        }
+                    ],
+                    documentos: [
+                        {
+                            $skip: skip
+                        },
+                        {
+                            $limit: limit
+                        }
+                    ]
+                }
+            }
+        ]))[0]
+
+        const count = aggregate ? aggregate.count.length > 0 ? aggregate.count[0].count : 0 : 0
+        const documentos = aggregate ? aggregate.documentos.length > 0 ? aggregate.documentos : [] : []
+        const pages = Math.ceil(count / limit)
+
+        const { previous_page, next_page } = util.getPagination(page, pages)
+        console.log(documentos);
+        
+        res.render('buscador/comunidad', { 
+            title: "Comunidad", 
+            layout: "main",
+            limit,
+            count,
+            page,
+            pages,
+            query,
+            previous_page,
+            next_page,
+            documentos
+         });
+    } catch (error) {
+        next(new AppError(error))
+    }
+}
+
+
+exports.facultad = async (req, res, next) => {
+    try {
+        const facultades = await Facultad.find()
+
+        const query = req.query;
+        const stage = []
+        
+        if (query.facultad  && query.facultad != '') {
+            stage.push({
+                $match: {
+                    "tipo.escuela_profesional.facultad._id" : parseInt(query.facultad)
+                }
+            })
+        }
+
+        let limit = 10;
+        let page = 1;
+    
+        if (query.limit && query.limit != 0 && !isNaN(query.limit)) limit = parseInt(query.limit);
+        if (query.page && !isNaN(query.page) && query.page != 0) page = parseInt(query.page);
+
+        const skip = (page - 1) * limit;
+
+        const aggregate = (await Documento.aggregate([
+            {
+                $lookup: {
+                    from: "tipos",
+                    localField: "tipo",
+                    foreignField: "_id",
+                    as: "tipo"
+                }
+            },
+            {
+                $unwind: "$tipo"
+            },
+            {
+                $lookup: {
+                    from: "escuelaprofesionals",
+                    localField: "tipo.escuela_profesional",
+                    foreignField: "_id",
+                    as: "tipo.escuela_profesional"
+                }
+            },
+            {
+                $unwind: "$tipo.escuela_profesional"
+            },
+            {
+                $lookup: {
+                    from: "facultads",
+                    localField: "tipo.escuela_profesional.facultad",
+                    foreignField: "_id",
+                    as: "tipo.escuela_profesional.facultad"
+                }
+            },
+            {
+                $unwind: "$tipo.escuela_profesional.facultad"
+            },
+            ...stage,
             {
                 $facet: {
                     count: [
@@ -233,9 +337,10 @@ exports.comunidad = async (req, res, next) => {
 
         const { previous_page, next_page } = util.getPagination(page, pages)
         
-        res.render('buscador/comunidad', { 
-            title: "Comunidad", 
+        res.render('buscador/facultad', { 
+            title: "Facultad", 
             layout: "main",
+            facultades,
             limit,
             count,
             page,
@@ -245,15 +350,6 @@ exports.comunidad = async (req, res, next) => {
             next_page,
             documentos
          });
-    } catch (error) {
-        next(new AppError(error))
-    }
-}
-
-
-exports.facultad = async (req, res, next) => {
-    try {
-        res.render('buscador/facultad', { title: "Facultad", layout: "main" });
     } catch (error) {
         next(new AppError(error))
     }
@@ -386,9 +482,12 @@ exports.palabra_clave = async (req, res, next) => {
 
 
 exports.buqueda_avanzada = async (req, res, next) => {
-
     try {
-        throw new Error("No soportado")
+        res.render('buscador/busqueda_avanzada', {
+            title: "Búsqueda Avanzada", 
+            layout: "main3",
+
+        });
     } catch (error) {
         next(new AppError(error))
     }

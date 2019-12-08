@@ -6,7 +6,7 @@ const Usuario = require('../models/Usuario')
 const TipoUsuario = require('../models/TipoUsuario')
 
 exports.getLogin = async (req, res, next) => {
-    res.send("Vista de inicio de sesión");
+    res.render('acceso/loginUsuario', { title: "Acceso", layout: "main" });
 }
 
 exports.postLogin = (req, res, next) => {
@@ -29,7 +29,7 @@ exports.postLogin = (req, res, next) => {
 }
 
 exports.getRegistro = (req, res, next) => {
-    res.send("Vista de inicio de registro");
+  res.render('acceso/registro', { title: "Registro", layout: "main" });
 }
 
 exports.postRegistro = async (req, res, next) => {
@@ -63,4 +63,12 @@ exports.postRegistro = async (req, res, next) => {
     } catch (error) {
         return next(new AppError(error, `/acceso/registro`));
     }
+}
+
+exports.getOlvido = (req, res, next) => {
+  res.render('acceso/olvido', { title: "Olvido", layout: "main" });
+}
+
+exports.postOlvido = async (req, res, next) => {
+    
 }

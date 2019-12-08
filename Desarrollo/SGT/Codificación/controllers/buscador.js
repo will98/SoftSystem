@@ -234,11 +234,32 @@ exports.comunidad = async (req, res, next) => {
         const pages = Math.ceil(count / limit)
 
         const { previous_page, next_page } = util.getPagination(page, pages)
-        console.log(documentos);
+        //e.log(documentos);
+
+        var comunidad_titulo = ''
         
+        switch (query.comunidad){
+            case '1':
+                comunidad_titulo = 'Ingeniería'
+                break;
+            case '2':
+                    comunidad_titulo = 'Ciencias Básicas'
+                    break;
+            case '3':
+                    comunidad_titulo = 'Ciencias de la Salud'
+                    break;
+            case '4':
+                    comunidad_titulo = 'Ciencias Económicas y de la Gestión'
+                    break;
+            case '5':
+                    comunidad_titulo = 'Humanidades Jurídicas y sociales'
+                    break;
+        }
+
         res.render('buscador/comunidad', { 
             title: "Comunidad", 
             layout: "main",
+            comunidad_titulo,
             limit,
             count,
             page,

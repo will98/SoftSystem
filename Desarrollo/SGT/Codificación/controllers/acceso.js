@@ -16,11 +16,15 @@ exports.postLogin = (req, res, next) => {
             return next(new AppError(error, `/acceso`));
           }
           if (!user) {
-            return res.render('acceso/loginUsuario', { title: "Acceso", layout: "main", info });
+            return next(new AppError(new Error(info.msg), `/acceso`));
           }
           req.logIn(user, (err) => {
-            if (err) { return next(new AppError(error, `/acceso`));}
-            return res.render('usuario/principal', { title: "Acceso", layout: "mainUsuario", user });
+            if (err) { return next(new AppError(err, `/acceso`));}
+            if (user.tipoUsuario == 2){
+              return res.redirect('/usuario');
+            }else{
+              return res.redirect('/homeadmin');
+            }
           });
         } catch (error) {
           return next(new AppError(error, `/acceso`));
@@ -57,7 +61,7 @@ exports.postRegistro = async (req, res, next) => {
 
           req.logIn(newUser, (err) => {
             if (err) return next(err);
-                return res.send(newUser)
+                return res.redirect('usuario');
           });
 
     } catch (error) {

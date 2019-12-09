@@ -18,5 +18,5 @@ exports.handleError = (error, req, res, next) => {
       req.flash('errors', { msg: "Ups! Ha ocurrido un error." });
     }
     console.log(error);
-    return res.redirect("/");
+    return res.redirect(redirect);
   }

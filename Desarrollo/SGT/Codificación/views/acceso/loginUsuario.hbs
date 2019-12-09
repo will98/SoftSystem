@@ -2,10 +2,6 @@
 <br>
 <div class="col-12">
     <form action="/acceso" method="POST">
-        {{#if info}}
-            <small style="color:red">{{info.msg}}</small>
-            <br>
-        {{/if}}
         <div class="form-group">
             <label for="exampleInputEmail1">Correo electrónico</label>
             <input type="email" name="correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo electrónico">

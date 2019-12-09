@@ -1,0 +1,315 @@
+  <script src="/js/admin/tesis.js"></script>
+
+<div class="modal" tabindex="-1" role="dialog" id="modalagregar">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Agregar Tesis</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/tesis/agregar" method="post">
+        <div class="modal-body">
+          <div class="cuerpo-modal row">
+              <div class="form-group col-md-4">
+                  <label>Titulo</label>
+                  <input class="form-control" type="text" required name="incremento" >
+               </div>
+               <div class="form-group col-md-4">
+                  <label>Grado</label>
+                  <input class="form-control" type="text" required name="incremento" >
+               </div>
+               <div class="form-group col-md-4">
+                  <label>Fecha</label>
+                  <input class="form-control" type="date" required name="incremento" >
+               </div>
+               <div class="form-group col-md-4">
+                  <label>Disciplina</label>
+                  <input class="form-control" type="text" required name="incremento" >
+               </div>
+               <div class="form-group col-md-4">
+                  <label>Cita</label>
+                  <input class="form-control" type="text" required name="incremento" >
+               </div>
+               <div class="form-group col-md-4">
+                  <label>URI</label>
+                  <input class="form-control" type="text" required name="incremento" >
+               </div>
+               <div class="form-group col-md-12">
+                  <label>Archivo</label>
+                  <input class="form-control form-control-file" type="file" required name="incremento" >
+               </div>
+               <div class="form-group  col-md-4">
+                  <label>Facultad</label>
+                  <select class="form-control" name="facultad">
+                      <option value="1" selected></option>
+                      
+                  </select>
+               </div>
+               <div class="form-group  col-md-4">
+                  <label>EAP</label>
+                  <select class="form-control" name="eap">
+                      <option value="1" selected></option>
+                   
+                  </select>
+               </div>
+               <div class="form-group  col-md-4">
+                  <label>Disciplina</label>
+                  <select class="form-control" name="disciplina">
+                      <option value="1" selected></option>
+                      
+                  </select>
+               </div>
+               <div class="form-group col-md-6">
+                  <label>Asesor(es)</label>
+                  <input class="form-control" type="text" required>
+               </div>
+               <div class="form-group col-md-6">
+                  <label>Palabras Clave</label>
+                  <input class="form-control" type="text" required>
+               </div>
+             
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Agregar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modaleditar">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="<?php echo base_url(); ?>producto/editar" method="post">
+        <div class="modal-body">
+          <div class="cuerpo-modal row">
+              <input type="hidden" name="id" value>
+              <div class="form-group  col-md-12">
+                  <label>Planta</label>
+                  <select class="form-control" name="planta">
+                      <option value="1" selected>Planta Pacasmayo</option>
+                      <option value="2" >Planta Piura</option>
+                      <option value="3" >Planta Rioja</option>
+                  </select>
+               </div>
+              <div class="form-group col-md-12">
+                <label>Precio Final en base a:</label>
+                 <select class="form-control" name="basefinal">
+                      <!-- <option value="1" selected>Planta Pacasmayo</option>
+                      <option value="2" >Planta Piura</option>
+                      <option value="3" >Planta Rioja</option> -->
+                  </select>
+                  <!-- <br>
+                  <input type="text" name="preciobase" class="form-control" readonly> -->
+               </div>
+               <div class="form-group col-md-12">
+                  <label>Variación</label>
+                  <div class="form-check col-md-6">
+                    <input class="form-check-input variacion porc" type="radio" name="tipovariacion" id="exampleRadios1" value="%">
+                    <label class="form-check-label" for="exampleRadios1">
+                      Porcentual (%)
+                    </label>
+                  </div>
+                  <div class="form-check col-md-6">
+                    <input class="form-check-input variacion mon" type="radio" name="tipovariacion" id="exampleRadios1" value="S/">
+                    <label class="form-check-label" for="exampleRadios1">
+                      Monetaria (S/)
+                    </label>
+                  </div>
+               </div>
+               <div class="form-group col-md-6">
+                  <label>Incremento</label>
+                  <input class="form-control" type="number" required name="incremento"  value="0.0" step=".01">
+               </div>
+               <div class="form-group simbolo col-md-6">
+                  <label><b>S/</b></label>
+               </div>
+               <!-- <div class="form-group col-md-12">
+                  <label>Precio Final</label>
+                  <input class="form-control" type="text" required name="preciofinal" readonly>
+               </div> -->
+               <div class="form-group col-md-12">
+                  <label>Nombre:</label>
+                  <input type="text" name="nombre" class="form-control">
+               </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="modaleliminar">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">¡Alerta!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>¿Está seguro que desea eliminar este post?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-eliminar">Eliminar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="tesis">
+    <br>
+    <br>
+    <div class="row justify-content-center">
+      <div class="col-md-3">
+          <h1 class="page-title">Tesis</h1>
+      </div>
+    </div>
+    <br>
+    <br>
+      
+      <div class="row filtros">
+        <div class="col-sm-4">
+            <label><b>Comunidad</b></label>
+                <select class="form-control" name="comunidad">
+                    <option value="1" selected>Ciencias Basicas</option>
+                    <option value="2" >Ciencias de la Salud</option>
+                    <option value="3" >Ciencias Económicas y de la Gestión</option>
+                    <option value="4" >Humanidades Jurídicas y sociales</option>
+                    <option value="5" >Ingeniería</option>
+
+                </select>
+
+                
+        </div>
+        <div class="col-sm-4">
+                <label><b>Año</b></label>
+                <select class="form-control" name="año">
+                    <option value="2010" selected>2010</option>
+                    <option value="2011" >2011</option>
+                    <option value="2012" >2012</option>
+                    <option value="2013" >2013</option>
+                    <option value="2014" >2014</option>
+                    <option value="2015" >2015</option>
+                    <option value="2016" >2016</option>
+                    <option value="2017" >2017</option>
+                    <option value="2018" >2018</option>
+                    <option value="2019" >2019</option>
+
+
+
+
+                </select>
+        </div>
+        <div class="col-sm-4" style="margin-top:27px">
+            <button type="button" class="btn btn-secondary btn-agregar" data-toggle="modal" data-target="#modalagregar"><i class="fas fa-plus-circle"></i> Agregar</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Tesis</th>
+              <th>Año</th>
+              <th>Comunidad</th>
+              <th width="100">Acciones</th>
+            </tr>
+          </thead>
+          
+            <tbody class="lista">
+              <tr width="100%" data-id="">
+                    <td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+                    <td>2011</td>
+                    <td>Ciencias Basicas</td>
+                    <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+                        <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr width="100%" data-id="">
+                    <td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+                    <td>2011</td>
+                    <td>Ciencias Basicas</td>
+                    <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+                        <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr width="100%" data-id="">
+                    <td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+                    <td>2011</td>
+                    <td>Ciencias Basicas</td>
+                    <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+                        <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr width="100%" data-id="">
+                    <td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+                    <td>2011</td>
+                    <td>Ciencias Basicas</td>
+                    <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+                        <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr width="100%" data-id="">
+                    <td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+                    <td>2011</td>
+                    <td>Ciencias Basicas</td>
+                    <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+                        <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr width="100%" data-id="">
+                    <td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+                    <td>2011</td>
+                    <td>Ciencias Basicas</td>
+                    <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+                        <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </td>
+                </tr>
+              
+            </tbody>
+        </table>
+
+      </div>
+      <br>
+
+
+</div>

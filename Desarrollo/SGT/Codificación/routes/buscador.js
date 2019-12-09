@@ -14,4 +14,7 @@ Router.get("/busqueda_avanzada", buscador.buqueda_avanzada)
 Router.get("/mas_visitadas", buscador.mas_visitadas)
 Router.get("/rango_anios", buscador.rango_anios)
 
+Router.get("/comunidadadmin", buscador.comunidadadmin)
+
+
 module.exports = Router

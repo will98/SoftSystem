@@ -33,5 +33,10 @@ Router.get("/comunidad", controller.comunidad)
 Router.get("/login",controller.login) 
 
 Router.get("/homeadmin",controller.homeadmin)
+Router.get("/admin/tesis",controller.tesis)
+Router.get("/loginadmin",controller.loginadmin)
+Router.get("/comunidadadmin/",controller.comunidadadmin)
+
+
 
 module.exports = Router

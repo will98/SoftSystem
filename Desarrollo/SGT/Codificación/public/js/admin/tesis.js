@@ -3,6 +3,359 @@ var valores = [];
 var lista = [];
 var tipovariacion = -1;
 
+var comunidades = [`<tr width="100%" data-id="">
+<td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+<td>2011</td>
+<td>Ciencias Basicas</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+<td>2011</td>
+<td>Ciencias Basicas</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+<td>2011</td>
+<td>Ciencias Basicas</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+<td>2011</td>
+<td>Ciencias Basicas</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+<td>2011</td>
+<td>Ciencias Basicas</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Procesamiento de imágenes basado en el análisis de ondículas</td>
+<td>2011</td>
+<td>Ciencias Basicas</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>`,`<tr width="100%" data-id="">
+<td>Presencia de Salmonella enterica en linfonódulos mesentéricos de cuyes (Cavia porcellus) provenientes de un matadero de la ciudad de Jauja-Junín ﻿</td>
+<td>2019</td>
+<td>Ciencias de la salud</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Presencia de Salmonella enterica en linfonódulos mesentéricos de cuyes (Cavia porcellus) provenientes de un matadero de la ciudad de Jauja-Junín ﻿</td>
+<td>2019</td>
+<td>Ciencias de la salud</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Presencia de Salmonella enterica en linfonódulos mesentéricos de cuyes (Cavia porcellus) provenientes de un matadero de la ciudad de Jauja-Junín ﻿</td>
+<td>2019</td>
+<td>Ciencias de la salud</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Presencia de Salmonella enterica en linfonódulos mesentéricos de cuyes (Cavia porcellus) provenientes de un matadero de la ciudad de Jauja-Junín ﻿</td>
+<td>2019</td>
+<td>Ciencias de la salud</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Presencia de Salmonella enterica en linfonódulos mesentéricos de cuyes (Cavia porcellus) provenientes de un matadero de la ciudad de Jauja-Junín ﻿</td>
+<td>2019</td>
+<td>Ciencias de la salud</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Presencia de Salmonella enterica en linfonódulos mesentéricos de cuyes (Cavia porcellus) provenientes de un matadero de la ciudad de Jauja-Junín ﻿</td>
+<td>2019</td>
+<td>Ciencias de la salud</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>`,`<tr width="100%" data-id="">
+<td>Paradigma de la utilidad de la información y evaluación del sistema de información contable</td>
+<td>2018</td>
+<td>Ciencias Económicas y de la Gestión</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Paradigma de la utilidad de la información y evaluación del sistema de información contable</td>
+<td>2018</td>
+<td>Ciencias Económicas y de la Gestión</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Paradigma de la utilidad de la información y evaluación del sistema de información contable</td>
+<td>2018</td>
+<td>Ciencias Económicas y de la Gestión</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Paradigma de la utilidad de la información y evaluación del sistema de información contable</td>
+<td>2018</td>
+<td>Ciencias Económicas y de la Gestión</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Paradigma de la utilidad de la información y evaluación del sistema de información contable</td>
+<td>2018</td>
+<td>Ciencias Económicas y de la Gestión</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Paradigma de la utilidad de la información y evaluación del sistema de información contable</td>
+<td>2018</td>
+<td>Ciencias Económicas y de la Gestión</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>`,`<tr width="100%" data-id="">
+<td>Proyecto educativo institucional y la calidad educativa de las instituciones educativas de educación secundaria del distrito de Ancón, RED 2, de la UGEL 04</td>
+<td>2019</td>
+<td>Humanidades y Ciencias Jurídicas y Sociales</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Proyecto educativo institucional y la calidad educativa de las instituciones educativas de educación secundaria del distrito de Ancón, RED 2, de la UGEL 04</td>
+<td>2019</td>
+<td>Humanidades y Ciencias Jurídicas y Sociales</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr><tr width="100%" data-id="">
+<td>Proyecto educativo institucional y la calidad educativa de las instituciones educativas de educación secundaria del distrito de Ancón, RED 2, de la UGEL 04</td>
+<td>2019</td>
+<td>Humanidades y Ciencias Jurídicas y Sociales</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr><tr width="100%" data-id="">
+<td>Proyecto educativo institucional y la calidad educativa de las instituciones educativas de educación secundaria del distrito de Ancón, RED 2, de la UGEL 04</td>
+<td>2019</td>
+<td>Humanidades y Ciencias Jurídicas y Sociales</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr><tr width="100%" data-id="">
+<td>Proyecto educativo institucional y la calidad educativa de las instituciones educativas de educación secundaria del distrito de Ancón, RED 2, de la UGEL 04</td>
+<td>2019</td>
+<td>Humanidades y Ciencias Jurídicas y Sociales</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Proyecto educativo institucional y la calidad educativa de las instituciones educativas de educación secundaria del distrito de Ancón, RED 2, de la UGEL 04</td>
+<td>2019</td>
+<td>Humanidades y Ciencias Jurídicas y Sociales</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+`,`<tr width="100%" data-id="">
+<td>Mejorar el grado de satisfacción de los clientes de la empresa Gie Perú S.A.C. aplicando un Sistema de Gestión Integrado ﻿</td>
+<td>2019</td>
+<td>Ingenierias</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Mejorar el grado de satisfacción de los clientes de la empresa Gie Perú S.A.C. aplicando un Sistema de Gestión Integrado ﻿</td>
+<td>2019</td>
+<td>Ingenierias</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Mejorar el grado de satisfacción de los clientes de la empresa Gie Perú S.A.C. aplicando un Sistema de Gestión Integrado ﻿</td>
+<td>2019</td>
+<td>Ingenierias</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Mejorar el grado de satisfacción de los clientes de la empresa Gie Perú S.A.C. aplicando un Sistema de Gestión Integrado ﻿</td>
+<td>2019</td>
+<td>Ingenierias</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Mejorar el grado de satisfacción de los clientes de la empresa Gie Perú S.A.C. aplicando un Sistema de Gestión Integrado ﻿</td>
+<td>2019</td>
+<td>Ingenierias</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Mejorar el grado de satisfacción de los clientes de la empresa Gie Perú S.A.C. aplicando un Sistema de Gestión Integrado ﻿</td>
+<td>2019</td>
+<td>Ingenierias</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Mejorar el grado de satisfacción de los clientes de la empresa Gie Perú S.A.C. aplicando un Sistema de Gestión Integrado ﻿</td>
+<td>2019</td>
+<td>Ingenierias</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>
+<tr width="100%" data-id="">
+<td>Mejorar el grado de satisfacción de los clientes de la empresa Gie Perú S.A.C. aplicando un Sistema de Gestión Integrado ﻿</td>
+<td>2019</td>
+<td>Ingenierias</td>
+<td>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-primary btn-editar"><i class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-outline-danger btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</td>
+</tr>`]
+
+
+
+
+
+
+
 $(document).ready(function(){
 
     listar();
@@ -12,7 +365,7 @@ $(document).ready(function(){
         $("#modalagregar").show();
     });
 
-    $("#tesis select[name=planta]").bind("change",function(){
+    $("#tesis select[name=comunidad]").bind("change",function(){
         listar();
     });
 
@@ -112,25 +465,28 @@ $(document).ready(function(){
         
     });
     
-    var options = {
-        dataType: 'json',
-        type: 'post',
-        clearForm:true,
-        beforeSubmit:function(){
-            $("#cargando").fadeIn(200);
-        },
-        beforeSerialize: function ($form, options) {
-        },
-        success: function(res){
-            if(res.res == 'ok'){
-                $("#cargando").fadeOut(200);
-                $('#modalagregar').modal('hide');
-            }
-            listar();
-        }
-    }
+    // var options = {
+    //     dataType: 'json',
+    //     type: 'post',
+    //     clearForm:true,
+    //     beforeSubmit:function(){
+    //         $("#cargando").fadeIn(200);
+    //     },
+    //     beforeSerialize: function ($form, options) {
+    //     },
+    //     success: function(res){
+    //         if(res.res == 'ok'){
+    //             $("#cargando").fadeOut(200);
+    //             $('#modalagregar').modal('hide');
+    //         }
+    //         listar();
+    //     }
+    // }
 
-    $("#modalagregar form").ajaxForm(options);
+    // $("#modalagregar form").ajaxForm(options);
+    $("#modalagregar .agregar").click(function(){
+        $("#modalagregar").modal("hide");
+    });
 
     var options = {
             dataType: 'json',
@@ -177,20 +533,20 @@ function tesisPorPlanta(valor){
 
 function listar(){
 	
-	// $("#tesis .lista").empty();
+	$("#tesis .lista").empty();
 
 	var tipo = $("#tesis select[name=comunidad]").val();
 	var año = $("#tesis select[name=año]").val();
     console.log(año+" "+tipo);
-    
-    new Request("tesis/listartesiss/",{tipo:tipo,año:año},function(res){
+    $("#tesis .lista").html(comunidades[tipo-1]);
+    // new Request("tesis/listartesiss/",{tipo:tipo,año:año},function(res){
         
-        lista = res.lista;
-        if(lista != null){
-            llenar();
-        }
+    //     lista = res.lista;
+    //     if(lista != null){
+    //         llenar();
+    //     }
  
-	});
+	// });
 }
 
 

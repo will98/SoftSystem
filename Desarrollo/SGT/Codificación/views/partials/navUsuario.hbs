@@ -10,8 +10,9 @@
                 <li><a href="/usuario/noticias">Noticias</a></li>
                 <li><a href="/usuario/recomendado">Recomendaciones</a></li>
             </ul>
-
-            <button id="btn-salir"  onclick="location.href='/'" type="button" class="btn btn-danger">Salir</button>
+            <form action="/acceso/logout" method="GET">
+                <input type="submit" class="btn btn-dark" value="Cerrar sesión">
+            </form>
         </nav>
     </div>
 </div>

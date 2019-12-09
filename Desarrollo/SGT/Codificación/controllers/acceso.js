@@ -16,11 +16,11 @@ exports.postLogin = (req, res, next) => {
             return next(new AppError(error, `/acceso`));
           }
           if (!user) {
-            return res.send(info);
+            return res.render('acceso/loginUsuario', { title: "Acceso", layout: "main", info });
           }
           req.logIn(user, (err) => {
             if (err) { return next(new AppError(error, `/acceso`));}
-            return res.send(user);
+            return res.render('usuario/principal', { title: "Acceso", layout: "mainUsuario", user });
           });
         } catch (error) {
           return next(new AppError(error, `/acceso`));
@@ -70,5 +70,4 @@ exports.getOlvido = (req, res, next) => {
 }
 
 exports.postOlvido = async (req, res, next) => {
-    
 }

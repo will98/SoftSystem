@@ -1,0 +1,153 @@
+<div class="home col-12">
+	<div class="home-inicio col-12">
+		Tesis más visitadas
+	</div>
+	<div class="masvisitadas-borde">
+		<form action="">
+			<div class="row">
+				<div class="avanzado-label col-12">
+					Rango de visitas
+				</div>
+			
+				<div class="slidecontainer col-12 col-lg-6">
+					<div class="inputDiv">
+						<div class="etiqueta "></div>
+						<span class="ini-slider-start ">1</span><span class="ini-slider-end">100</span>
+						<input class="slider" type="range" value="35" min="0" max="100" autocomplete="off" id="input3">
+					</div>
+				</div>
+				<div class="masvisitadas-buscar col-12 col-lg-6">
+					<button>Buscar</button>
+				</div>	
+			</div>
+		</form>
+	</div>
+	<br />
+	<div class="home-lista-tesis masvisitadas-busqueda col-12">
+		<div class="home-tesis col-12">
+			<div class="home-tesis-cabecera1 col-12">
+				<i class="fas fa-unlock"></i>&nbsp;
+				Acceso restringido <span class="home-articulo">Artículo</span>
+			</div>
+			<div class="home-tesis-cuerpo1 col-12">
+				<div class="home-titulo col-12">
+					Implementación y puesta en marcha de una planta de anhídrido carbónico líquido 
+				</div>
+				<div class="home-autor col-12">
+					Reyna Ramos, Julio Alberto (Universidad Nacional Mayor de San Marcos, 1985)
+				</div>
+				<div class="home-contenido col-12">
+					Propone la implementación de una fábrica de producción de anhidrido carbónico en la ciudad de Tacna considerando que se cuenta con un mercado creciente y sin competencia en el lugar. Asimismo, el estudio contempla el consumo ...
+				</div>
+				<div class="home-visitas col-12">
+					Numero de visitas: 1564
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="home-tesis col-12">
+			<div class="home-tesis-cabecera2 col-12">
+				<i class="fas fa-unlock"></i>&nbsp;
+				Acceso restringido <span class="home-articulo">Tesis</span>
+			</div>
+			<div class="home-tesis-cuerpo2 col-12">
+				<div class="home-titulo col-12">
+					Implementación y puesta en marcha de una planta de anhídrido carbónico líquido 
+				</div>
+				<div class="home-autor col-12">
+					Reyna Ramos, Julio Alberto (Universidad Nacional Mayor de San Marcos, 1985)
+				</div>
+				<div class="home-contenido col-12">
+					Propone la implementación de una fábrica de producción de anhidrido carbónico en la ciudad de Tacna considerando que se cuenta con un mercado creciente y sin competencia en el lugar. Asimismo, el estudio contempla el consumo ...
+				</div>
+				<div class="home-visitas col-12">
+					Numero de visitas: 1564
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="home-tesis col-12">
+			<div class="home-tesis-cabecera1 col-12">
+				<i class="fas fa-unlock"></i>&nbsp;
+				Acceso restringido <span class="home-articulo">Artículo</span>
+			</div>
+			<div class="home-tesis-cuerpo1 col-12">
+				<div class="home-titulo col-12">
+					Implementación y puesta en marcha de una planta de anhídrido carbónico líquido 
+				</div>
+				<div class="home-autor col-12">
+					Reyna Ramos, Julio Alberto (Universidad Nacional Mayor de San Marcos, 1985)
+				</div>
+				<div class="home-contenido col-12">
+					Propone la implementación de una fábrica de producción de anhidrido carbónico en la ciudad de Tacna considerando que se cuenta con un mercado creciente y sin competencia en el lugar. Asimismo, el estudio contempla el consumo ...
+				</div>
+				<div class="home-visitas col-12">
+					Numero de visitas: 1564
+				</div>
+			</div>
+		</div>
+	</div>
+	<br />
+	<div class="paginacion col-12">
+
+		<div class="paginado row">
+			<form class="pag" method="post">
+		      <a class="prev align-middle" href="" title="previous">
+		        <i class="fas fa-caret-square-left"></i>
+		      </a>
+		      <span class="page-nr align-middle">
+		        Página
+		        <span class="field">
+		          <input class="page-number" type="text" name="go-to-page" title="Page 2" value="2"/>
+		          <span class="pagination-error error-message d-none">
+		            <strong>
+		              <span class="invalid-page-number"></span>
+		            </strong>
+		            is not a valid page number. Please enter a number between
+		            <strong>1</strong>
+		            and
+		            <strong>1,229</strong>
+		          </span>
+		        </span>
+		        de
+		        <span class="number-of-pages">50</span>
+		      </span>
+		      <input class="previous-page" type="hidden" name="previous-page" value="2"/>
+		      <input class="d-none" type="hidden" name="total-pages" value="1,229"/>
+		      <input class="d-none" type="hidden" name="searchParameters" value="query=maching+learning"/>
+		      <input class="d-none" type="submit" name="submit" value="submit"/>
+		      <a class="next align-middle" href="" title="next">
+		        <i class="fas fa-caret-square-right"></i>
+		      </a>
+		    </form>
+		</div>
+	</div>
+</div>
+
+<script>
+
+	var elInput3 = document.querySelector('#input3');
+	if (elInput3) {
+	  var w = parseInt(window.getComputedStyle(elInput3, null).getPropertyValue('width'));
+
+	  // LA ETIQUETA 
+	  var etq = document.querySelector('.etiqueta');
+	  if (etq) {
+	    // el valor de la etiqueta (el tooltip) 
+	    etq.innerHTML = elInput3.value;
+
+	    // calcula la posición inicial de la etiqueta (el tooltip); 
+	    var pxls = w / 100;
+
+	    etq.style.left = ((elInput3.value * pxls) - 15) + 'px';
+
+	    elInput3.addEventListener('input', function() {
+	      // cambia el valor de la etiqueta (el tooltip) 
+	      etq.innerHTML = elInput3.value;
+	      // cambia la posición de la etiqueta (el tooltip) 
+	      etq.style.left = ((elInput3.value * pxls) - 15) + 'px';
+
+	    }, false);
+	  }
+	}
+</script>

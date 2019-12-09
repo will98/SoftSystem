@@ -17,9 +17,24 @@
 </head>
 
 <body>
-  {{> header2}}
-    {{>navUsuario}}
-    {{{body}}}  
+ {{> header}}
+
+  <div class="container">
+    <div class="row">
+      
+      <div class="menu-izq col-12 col-lg-3">
+        {{> sidebar}}
+      </div>
+      <div class="main-der col-12 col-lg-9">
+        {{> navUsuario}}
+        <div class="main-body col-12">
+          {{{body}}}  
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
   {{> footer}}
 </body>
 

@@ -1,19 +1,4 @@
-<div class="menu-homeadmin">
-    <div class="menu-home" id="menu-home">
-        <input type="checkbox" id="btn-menu">
-        <label for="btn-menu"><img src="img\home\menu.png" alt=""> </label>
-        <nav class="menu navbar navbar-light bg-light" id="menu">
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Tesis</a></li>
-                <li><a href="">Noticias</a></li>
-            </ul>
-
-            <button id="btn-salir"  onclick="location.href='/homeadmin'" type="button" class="btn btn-danger">Salir</button>
-        </nav>
-    </div>
-</div>
-
+{{!-- 
 <div class="container">
   <div class="row p-3">
     <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"></div>
@@ -51,4 +36,76 @@
 </div>
 
  
+</div> --}}
+<style>
+  body{
+	background-color: #eee;
+}
+.item{
+	background-color: #fff;
+	margin-bottom: 30px;
+	border: solid 1px rgba(0,0,0,0.1);
+	border-radius: 5px;
+	cursor: pointer;
+	display: block;
+	color: #000;
+	text-decoration: none;
+}
+.item:hover{
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.4);
+	text-decoration: none;
+}
+.item:active{
+	transform:scale(0.95,0.95);
+}
+.item .icono{
+	font-size: 40px;
+	text-align: center;
+	margin: 20px 0;
+
+}
+.item .nom{
+	text-align: center;
+	font-size: 15px;
+	padding-bottom: 20px;
+}
+
+.producto img{
+	width:45px;
+	height: 81px;
+}
+</style>
+
+
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="row justify-content-center">
+      <div class="col-md-3">
+          <h1 class="page-title">Administrador</h1>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row justify-content-center" >
+        <div class="col-sm-3">
+                <a class="item" onclick="location.href='/admin/tesis'">
+                    <div class="icono">
+                    <!-- <i class="fa fa-sticky-note icono"></i> -->
+                    <i class="fas fa-book icono"></i>
+                    </div>
+                    <div class="nom">Tesis</div>
+                </a>
+        </div>
+        <div class="col-sm-3">
+                <a class="item" onclick="location.href='/'">
+                    <div class="icono">
+                    <!-- <i class="fa fa-sticky-note icono"></i> -->
+                    <i class="fas fa-newspaper icono"></i>
+                    </div>
+                    <div class="nom">Noticias</div>
+                </a>
+        </div>
+    </div>
 </div>

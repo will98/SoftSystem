@@ -35,7 +35,18 @@ exports.palabra_clave = (req, res, next) => {
 exports.login = (req, res, next) => {
     res.render('acceso/login', {title: "Puerta de Logeo", layout: "main2"});
 }
-
+/** */
 exports.homeadmin = (req, res, next) => {
     res.render('Admin/homeadmin', {title: "Homeadmin", layout: "main2"});
+}
+exports.loginadmin = (req, res, next) => {
+    res.render('Admin/loginadmin', {title: "Login Admin", layout: "main2"});
+}
+
+exports.tesis = (req, res, next) => {
+    res.render('Admin/Tesis', {title: "Tesis", layout: "main2"});
+}
+
+exports.comunidadadmin = (req, res, next) => {
+    res.render('Admin/Tesis', {title: "Tesis", layout: "main2"});
 }

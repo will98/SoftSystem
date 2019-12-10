@@ -64,6 +64,12 @@ app.use(session({
 }));
 app.use(flash());
 
+app.use(function(req, res, next){
+  res.locals.success = req.flash('success');
+  res.locals.errors = req.flash('errors');
+  next();
+});
+
 app.use(express.static(path.join(__dirname, '../public'), { maxAge: 31557600000 }));
 
 

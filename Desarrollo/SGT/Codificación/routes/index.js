@@ -6,6 +6,7 @@ const acceso = require('../routes/acceso')
 const admin = require('../routes/admin')
 const buscador = require('../routes/buscador')
 const tesis = require('../routes/tesis')
+const usuario = require('../routes/usuario')
 
 Router.use("/home", home)
 Router.use("/acceso", acceso)
@@ -13,6 +14,7 @@ Router.use("/admin", admin)
 console.log('3.- buscador')
 Router.use("/buscador", buscador)
 Router.use("/tesis", tesis)
+Router.use("/usuario", usuario)
 
 Router.get("/", controller.home)
 
@@ -31,5 +33,10 @@ Router.get("/comunidad", controller.comunidad)
 Router.get("/login",controller.login) 
 
 Router.get("/homeadmin",controller.homeadmin)
+Router.get("/admin/tesis",controller.tesis)
+Router.get("/loginadmin",controller.loginadmin)
+Router.get("/comunidadadmin/",controller.comunidadadmin)
+
+
 
 module.exports = Router

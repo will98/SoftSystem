@@ -12,19 +12,28 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/lib/jquery-3.4.1.min.js"></script>
-  <script src="/js/lib/jquery.form.js"></script>
+
   <script src="/js/lib/bootstrap4.js"></script>
-  
-
-
 </head>
 
 <body>
-  {{> header2}}
+ {{> header}}
 
-   {{{body}}}  
- 
+  <div class="container">
+    <div class="row">
+      
+      <div class="menu-izq col-12 col-lg-3">
+        {{> sidebar}}
+      </div>
+      <div class="main-der col-12 col-lg-9">
+        {{> navUsuario}}
+        <div class="main-body col-12">
+          {{{body}}}  
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
   {{> footer}}
 </body>

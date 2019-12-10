@@ -112,7 +112,15 @@
 					<a href=""><img src="/img/header/header-escudo.png" class="img-fluid" alt="Responsive image"></a>
 				</div>
 				<div class="col-12 col-lg-1">
-					<a href="/login">Acceder</a>
+          {{#if user}}
+            <a href="/usuario">
+              <img src="https://uybor.uz/borless/avtobor/img/user-images/user_no_photo_300x300.png" alt="" class="img-fluid">
+              <small>{{user.nombres}}</small>
+            </a>
+          {{else}}
+            <a href="/acceso">Acceder</a>
+          {{/if}}
+					
 				</div>
         <div class="col-4  offset-5 h-hamburguesa">
 					<span></span>

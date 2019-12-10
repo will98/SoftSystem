@@ -1,0 +1,56 @@
+
+
+	<style>
+	form{
+		width: 400px;
+		margin: auto;
+	}
+	input{
+		margin: 20px 0;
+	}
+	.btn-success{
+		margin: auto;
+		display: block;
+		width: 100%;
+		background-color: #7D0005;
+		border-color: #7D0005;
+
+	}
+	.btn-success:hover{
+		
+		background-color: #7D0005;
+		border-color: #7D0005;
+
+	}
+	.franja{
+		background-color: #797979;
+		padding-top: 40px;
+		padding-bottom: 20px;
+	}
+	
+	.franja .logo{
+		display: block;
+		margin: auto;
+	}
+
+	</style>
+<div id="login" class="container">
+    <br>
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h1 class="page-title">Ingreso al sistema</h1>
+        </div>
+    </div>
+	<form class="form-signin" role="form" action="/homeadmin" method="get" style="text-align: center;">
+		<br>
+        <span >Módulo de administración</span>
+		<input type="text" class="form-control inuser" placeholder="Usuario" name="usuario" required autofocus>
+		<input type="password" class="form-control inclave" placeholder="Clave" name="clave" required>
+
+		<button class="btn btn-success" type="submit">Entrar</button>
+		<br><br>
+		
+	</form>
+</div>
+

@@ -616,3 +616,137 @@ exports.rango_anios = async (req, res, next) => {
         next(new AppError(error))
     }
 }
+
+
+
+exports.comunidadadmin = async (req, res, next) => {
+    console.log('comunidad');
+    try {
+        const query = req.query;
+        const stage = []
+        
+        if (query.comunidad  && query.comunidad != '' && query.comunidad) {
+            stage.push({
+                $match: {
+                    "tipo.escuela_profesional.facultad.area_academica._id" : parseInt(query.comunidad)
+                }
+            })
+        }
+
+        let limit = 10;
+        let page = 1;
+    
+        if (query.limit && query.limit != 0 && !isNaN(query.limit)) limit = parseInt(query.limit);
+        if (query.page && !isNaN(query.page) && query.page != 0) page = parseInt(query.page);
+
+        const skip = (page - 1) * limit;
+
+        const aggregate = (await Documento.aggregate([
+            {
+                $lookup: {
+                    from: "tipos",
+                    localField: "tipo",
+                    foreignField: "_id",
+                    as: "tipo"
+                }
+            },
+            {
+                $unwind: "$tipo"
+            },
+            {
+                $lookup: {
+                    from: "escuelaprofesionals",
+                    localField: "tipo.escuela_profesional",
+                    foreignField: "_id",
+                    as: "tipo.escuela_profesional"
+                }
+            },
+            {
+                $unwind: "$tipo.escuela_profesional"
+            },
+            {
+                $lookup: {
+                    from: "facultads",
+                    localField: "tipo.escuela_profesional.facultad",
+                    foreignField: "_id",
+                    as: "tipo.escuela_profesional.facultad"
+                }
+            },
+            {
+                $unwind: "$tipo.escuela_profesional.facultad"
+            },
+            {
+                $lookup: {
+                    from: "areaacademicas",
+                    localField: "tipo.escuela_profesional.facultad.area_academica",
+                    foreignField: "_id",
+                    as: "tipo.escuela_profesional.facultad.area_academica"
+                }
+            },
+            {
+                $unwind: "$tipo.escuela_profesional.facultad.area_academica"
+            },
+            ...stage,
+            {
+                $facet: {
+                    count: [
+                        {
+                            $count: "count"
+                        }
+                    ],
+                    documentos: [
+                        {
+                            $skip: skip
+                        },
+                        {
+                            $limit: limit
+                        }
+                    ]
+                }
+            }
+        ]))[0]
+
+        const count = aggregate ? aggregate.count.length > 0 ? aggregate.count[0].count : 0 : 0
+        const documentos = aggregate ? aggregate.documentos.length > 0 ? aggregate.documentos : [] : []
+        const pages = Math.ceil(count / limit)
+
+        const { previous_page, next_page } = util.getPagination(page, pages)
+        //e.log(documentos);
+
+        var comunidad_titulo = ''
+        
+        switch (query.comunidad){
+            case '1':
+                comunidad_titulo = 'Ingeniería'
+                break;
+            case '2':
+                    comunidad_titulo = 'Ciencias Básicas'
+                    break;
+            case '3':
+                    comunidad_titulo = 'Ciencias de la Salud'
+                    break;
+            case '4':
+                    comunidad_titulo = 'Ciencias Económicas y de la Gestión'
+                    break;
+            case '5':
+                    comunidad_titulo = 'Humanidades Jurídicas y sociales'
+                    break;
+        }
+
+        res.render('buscador/comunidad', { 
+            title: "Comunidad", 
+            layout: "main",
+            comunidad_titulo,
+            limit,
+            count,
+            page,
+            pages,
+            query,
+            previous_page,
+            next_page,
+            documentos
+         });
+    } catch (error) {
+        next(new AppError(error))
+    }
+}

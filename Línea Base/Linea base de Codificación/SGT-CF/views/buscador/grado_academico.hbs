@@ -1,0 +1,93 @@
+<div class="col-12 home-inicio">Grado académico</div>
+<br>
+<div class="col-12 subtitulo">Grado académico</div>
+<div class="col-12">
+    <form action="/buscador/grado_academico" method="get" class="form-group row">
+        <div class="col-12 col-lg-5">
+            <select value="{{query.grado}}" class="form-control" id="exampleFormControlSelect1" name="grado">
+            <option value = "asd" disabled selected >
+                {{#if query.grado}}
+                {{query.grado}}
+                {{else}}
+                Elija un grado académico
+                {{/if}}
+            </option>
+            <option>Pregrado</option>
+            <option>Titulo Profesional</option>
+            <option>Maestría</option>
+            <option>Doctorado</option>
+            <option>Post-Doctorado</option>
+            </select>
+        </div>
+        <div class="col-12 col-lg-5 mt-3"></div>
+        <div class="col-12 col-lg-2">
+            <button class="btn btn-dark btn-block">Buscar</button>
+        </div>
+    </form>
+        <div class="home-lista-tesis col-12">
+
+		{{#each documentos}}
+			<div class="home-tesis col-12">
+				<div class="home-tesis-cabecera1 col-12">
+					{{#if this.restringido}}
+						<i class="fas fa-unlock"></i>&nbsp;
+						Acceso restringido <span class="home-articulo">Artículo - {{@index}}</span>
+					{{else}}
+						<i class="fas fa-lock-open"></i>&nbsp;
+						Acceso libre <span class="home-articulo">Artículo - {{@index}}</span>
+					{{/if}}
+				</div>
+				<div class="home-tesis-cuerpo1 col-12">
+					<div class="home-titulo col-12">
+						{{this.titulo}}
+					</div>
+					<div class="home-autor col-12">
+						{{this.autores}} (Universidad Nacional Mayor de San Marcos, {{this.fecha}})
+					</div>
+					<div class="home-contenido col-12">
+						{{this.descripcion}}
+					</div>
+					<div class="home-visitas col-12">
+						Numero de visitas: {{this.numero_vistas}}
+					</div>
+				</div>
+			</div>
+			<br />
+		{{/each}}
+	</div>
+
+
+	{{#if pages}}
+		<div class="paginacion col-12">
+			<div class="paginado row">
+				<form class="pag">
+					<a class="prev align-middle" href="./grado_academico?grado={{query.grado}}&page={{previous_page}}&min={{query.min}}&max={{query.max}}" title="Anterior">
+						<i class="fas fa-caret-square-left"></i>
+					</a>
+					<span class="page-nr align-middle">
+						Página
+						<span class="field">
+							<input class="page-number" type="number" name="page" title="Página {{page}}" value={{page}} min=1 max={{pages}} />
+							<span class="pagination-error error-message d-none">
+								<strong>
+									<span class="invalid-page-number"></span>
+								</strong>
+								is not a valid page number. Please enter a number between
+								<strong>1</strong>
+								and
+								<strong>1,229</strong>
+							</span>
+						</span>
+						de
+						<span class="number-of-pages">{{pages}}</span>
+					</span>
+					<input class="d-none" type="hidden" name="min" value={{query.min}}>
+					<input class="d-none" type="hidden" name="max" value={{query.max}}>
+					<a class="next align-middle" href="./grado_academico?grado={{query.grado}}&page={{next_page}}&min={{query.min}}&max={{query.max}}" title="Siguiente">
+						<i class="fas fa-caret-square-right"></i>
+					</a>
+				</form>
+			</div>
+		</div>
+	{{/if}}
+</div>

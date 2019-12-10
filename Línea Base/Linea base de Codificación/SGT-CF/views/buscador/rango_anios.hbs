@@ -1,0 +1,108 @@
+<div class="home col-12">
+	<div class="home-inicio col-12">
+		Rango de Años
+	</div>
+	<div class="masvisitadas-borde">
+		<form action="buscador/rango_anios" method="get">
+			<div class="row">
+				<div class="slidecontainer col-12 col-lg-9">
+					<div class="row">
+						{{!-- <div class="avanzado-select avanzado-paddingtop rangoanios-paddingtop col-12 col-lg-4">
+							<div class="avanzado-input avanzado-input-anio col-12">
+								<select>
+									<option value="">Año</option>
+									<option value="">Rango de Años</option>
+								</select>
+							</div>
+						</div> --}}
+						<div class="avanzado-select col-12 col-lg-4">
+							<div class="avanzado-label avanzado-label-anio col-12">
+								Año de Inicio
+							</div>
+							<div class="avanzado-input avanzado-input-anio col-12">
+								<input type="number" name="min" value={{query.min}}>
+							</div>
+						</div>
+						<div class="avanzado-select col-12 col-lg-4">
+							<div class="avanzado-label avanzado-label-anio col-12">
+								Año final
+							</div>
+							<div class="avanzado-input avanzado-input-anio col-12">
+								<input type="number" name="max" value={{query.max}}>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="masvisitadas-buscar avanzado-paddingtop col-12 col-lg-3">
+					<button>Buscar</button>
+				</div>
+			</div>
+		</form>
+		<br />
+	</div>
+	<div class="home-lista-tesis masvisitadas-busqueda col-12">
+		{{#each documentos}}
+			<div class="home-tesis col-12">
+				<div class="home-tesis-cabecera1 col-12">
+					{{#if this.restringido}}
+						<i class="fas fa-unlock"></i>&nbsp;
+						Acceso restringido <span class="home-articulo">Artículo - {{@index}}</span>
+					{{else}}
+						<i class="fas fa-lock-open"></i>&nbsp;
+						Acceso libre <span class="home-articulo">Artículo - {{@index}}</span>
+					{{/if}}
+				</div>
+				<div class="home-tesis-cuerpo1 col-12">
+					<div class="home-titulo col-12">
+						{{this.titulo}}
+					</div>
+					<div class="home-autor col-12">
+						{{this.autores}} (Universidad Nacional Mayor de San Marcos, {{this.fecha}})
+					</div>
+					<div class="home-contenido col-12">
+						{{this.descripcion}}
+					</div>
+					<div class="home-visitas col-12">
+						Numero de visitas: {{this.numero_vistas}}
+					</div>
+				</div>
+			</div>
+			<br />
+		{{/each}}
+	</div>
+	</br>
+	{{#if pages}}
+		<div class="paginacion col-12">
+			<div class="paginado row">
+				<form class="pag">
+					<a class="prev align-middle" href="./rango_anios?page={{previous_page}}&min={{query.min}}&max={{query.max}}" title="Anterior">
+						<i class="fas fa-caret-square-left"></i>
+					</a>
+					<span class="page-nr align-middle">
+						Página
+						<span class="field">
+							<input class="page-number" type="number" name="page" title="Página {{page}}" value={{page}} min=1 max={{pages}} />
+							<span class="pagination-error error-message d-none">
+								<strong>
+									<span class="invalid-page-number"></span>
+								</strong>
+								is not a valid page number. Please enter a number between
+								<strong>1</strong>
+								and
+								<strong>1,229</strong>
+							</span>
+						</span>
+						de
+						<span class="number-of-pages">{{pages}}</span>
+					</span>
+					<input class="d-none" type="hidden" name="min" value={{query.min}}>
+					<input class="d-none" type="hidden" name="max" value={{query.max}}>
+					<a class="next align-middle" href="./rango_anios?page={{next_page}}&min={{query.min}}&max={{query.max}}" title="Siguiente">
+						<i class="fas fa-caret-square-right"></i>
+					</a>
+				</form>
+			</div>
+		</div>
+	{{/if}}
+	<br />
+</div>

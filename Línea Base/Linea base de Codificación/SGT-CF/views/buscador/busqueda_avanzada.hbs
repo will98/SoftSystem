@@ -1,0 +1,184 @@
+<div class="home col-12">
+	<div class="busqueda-avanzada col-12">
+		Búsqueda Avanzada
+	</div>
+	<div class="busqueda-campos col-12">
+		<div class="busqueda-campos-borde col-12">
+			<div class="row">
+				<div class="avanzado-label col-12">
+					Autor
+				</div>
+				<div class="avanzado-input col-12">
+					<input type="" name="" placeholder="Ingrese el nombre del autor...">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="avanzado-label col-12">
+					Asesor
+				</div>
+				<div class="avanzado-input col-12">
+					<input type="" name="" placeholder="Ingrese el nombre del asesor...">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="avanzado-label col-12">
+					Título
+				</div>
+				<div class="avanzado-input col-12">
+					<input type="" name="" placeholder="Ingrese el título...">
+				</div>
+			</div>
+			
+			<div class="row align-items-center">
+				<div class="avanzado-label col-12">
+					Mostrar documentos publicados
+				</div>
+				<div class="avanzado-select avanzado-paddingtop col-12 col-lg-4">
+					<div class="avanzado-input avanzado-input-anio col-12">
+						<select>
+							<option value="">Año</option>
+							<option value="">Rango de Años</option>
+						</select>
+					</div>
+				</div>
+				<div class="avanzado-select col-12 col-lg-4">
+					<div class="avanzado-label avanzado-label-anio col-12">
+						Año de Inicio
+					</div>
+					<div class="avanzado-input avanzado-input-anio col-12">
+						<input type="" name="">
+					</div>
+				</div>
+				<div class="avanzado-select col-12 col-lg-4">
+					<div class="avanzado-label avanzado-label-anio col-12">
+						Año final
+					</div>
+					<div class="avanzado-input avanzado-input-anio col-12">
+						<input type="" name="">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="avanzado-label col-12">
+					Comunidad
+				</div>
+				<div class="avanzado-input col-12 col-lg-6">
+					<select>
+						<option selected='selected' hidden value="">Elija una comunidad</option>
+						<option value="">Rango de Años</option>
+						<option value="">Rango de Años</option>
+						<option value="">Rango de Años</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="avanzado-label col-12">
+					Grado Académico
+				</div>
+				<div class="avanzado-input col-12 col-lg-6">
+					<select>
+						<option selected='selected' value="">Elija un grado académico</option>
+						<option value="">Rango de Años</option>
+						<option value="">Rango de Años</option>
+						<option value="">Rango de Años</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class=" avanzado-select row-2col col-12 col-lg-6">
+					<div class="avanzado-label col-12">
+						Facultad
+					</div>
+					<div class="avanzado-input col-12">
+						<select>
+							<option selected='selected' hidden value="">Elija una Facultad</option>
+							<option value="">Rango de Años</option>
+							<option value="">Rango de Años</option>
+							<option value="">Rango de Años</option>
+						</select>
+					</div>
+				</div>
+				<div class=" avanzado-select row-2col col-12 col-lg-6">
+					<div class="avanzado-label col-12">
+					Escuela Académica
+				</div>
+				<div class="avanzado-input col-12">
+					<select>
+						<option selected='selected' hidden value="">Elija una Escuela Académica</option>
+						<option value="">Rango de Años</option>
+						<option value="">Rango de Años</option>
+						<option value="">Rango de Años</option>
+					</select>
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="avanzado-label col-12">
+					Grado Académico
+				</div>
+				<div class="avanzado-input col-12 col-lg-6">
+					<select>
+						<option selected='selected' value="">Elija un grado académico</option>
+						<option value="">Rango de Años</option>
+						<option value="">Rango de Años</option>
+						<option value="">Rango de Años</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="avanzado-label col-12">
+					Autor
+				</div>
+				<div class="slidecontainer col-12 col-lg-6">
+					<div class="inputDiv">
+						<div class="etiqueta">
+						</div>
+						<span class="ini-slider-start">1</span><span class="ini-slider-end">100</span>
+						<input class="slider" type="range" value="35" min="0" max="100" autocomplete="off" id="input3">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row avanzado-buscar justify-content-center">
+				<button>Buscar</button>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+<script>
+
+	var elInput3 = document.querySelector('#input3');
+	if (elInput3) {
+	  var w = parseInt(window.getComputedStyle(elInput3, null).getPropertyValue('width'));
+
+	  // LA ETIQUETA 
+	  var etq = document.querySelector('.etiqueta');
+	  if (etq) {
+	    // el valor de la etiqueta (el tooltip) 
+	    etq.innerHTML = elInput3.value;
+
+	    // calcula la posición inicial de la etiqueta (el tooltip); 
+	    var pxls = w / 100;
+
+	    etq.style.left = ((elInput3.value * pxls) - 15) + 'px';
+
+	    elInput3.addEventListener('input', function() {
+	      // cambia el valor de la etiqueta (el tooltip) 
+	      etq.innerHTML = elInput3.value;
+	      // cambia la posición de la etiqueta (el tooltip) 
+	      etq.style.left = ((elInput3.value * pxls) - 15) + 'px';
+
+	    }, false);
+	  }
+	}
+</script>
